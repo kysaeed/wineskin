@@ -16,6 +16,7 @@
 		A89E94A6153EE960006F38DB /* WineskinBanner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A89E94A5153EE960006F38DB /* WineskinBanner.jpg */; };
 		A8A76BB114E46AB700F2C8D0 /* Winery.icns in Resources */ = {isa = PBXBuildFile; fileRef = A8A76BB014E46AB700F2C8D0 /* Winery.icns */; };
 		A8EBE81B1274E83500CC9815 /* 7za in Resources */ = {isa = PBXBuildFile; fileRef = A8EBE81A1274E83500CC9815 /* 7za */; };
+		C9923C341FA588E400028E52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9923C321FA588E400028E52 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,10 @@
 		A8A76BB014E46AB700F2C8D0 /* Winery.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Winery.icns; sourceTree = "<group>"; };
 		A8EBE81A1274E83500CC9815 /* 7za */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = 7za; sourceTree = SOURCE_ROOT; };
 		A8F15A3215CC47A10062CC71 /* Wineskin Winery.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Wineskin Winery.entitlements"; sourceTree = "<group>"; };
+		C94DAD711FA589D600A894A9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C9923C2C1FA586C700028E52 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C9923C2D1FA586C700028E52 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C9923C331FA588E400028E52 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +115,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C9923C321FA588E400028E52 /* Localizable.strings */,
 				A89E94A5153EE960006F38DB /* WineskinBanner.jpg */,
 				A8A76BB014E46AB700F2C8D0 /* Winery.icns */,
 				A8EBE81A1274E83500CC9815 /* 7za */,
@@ -158,6 +164,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0440;
+				TargetAttributes = {
+					8D1107260486CEB800E47090 = {
+						DevelopmentTeam = 6V9ZE5XK8D;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Wineskin Winery" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -168,6 +180,8 @@
 				Japanese,
 				French,
 				German,
+				ja,
+				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Wineskin Winery */;
 			projectDirPath = "";
@@ -186,6 +200,7 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				A8EBE81B1274E83500CC9815 /* 7za in Resources */,
+				C9923C341FA588E400028E52 /* Localizable.strings in Resources */,
 				A89936DE127B283A006A7581 /* WineskinWineryUpdater in Resources */,
 				A8A76BB114E46AB700F2C8D0 /* Winery.icns in Resources */,
 				A89E94A6153EE960006F38DB /* WineskinBanner.jpg in Resources */,
@@ -211,6 +226,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				089C165DFE840E0CC02AAC07 /* English */,
+				C9923C2C1FA586C700028E52 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -219,8 +235,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				1DDD58150DA1D0A300B32029 /* English */,
+				C9923C2D1FA586C700028E52 /* ja */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		C9923C321FA588E400028E52 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9923C331FA588E400028E52 /* English */,
+				C94DAD711FA589D600A894A9 /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -230,9 +256,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Urge Software LLC";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 6V9ZE5XK8D;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -252,9 +279,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CODE_SIGN_IDENTITY = "Developer ID Application: Urge Software LLC";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 6V9ZE5XK8D;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Wineskin_Winery_Prefix.pch;
@@ -270,6 +298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = "";
@@ -286,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

@@ -214,8 +214,8 @@ NSFileManager *fm;
 	// have user choose install program
 	//NSOpenPanel *panel = [NSOpenPanel openPanel];
 	NSOpenPanel *panel = [[NSOpenPanel alloc] init];
-	[panel setTitle:@"Please choose the install program"];
-	[panel setPrompt:@"Choose"];
+	[panel setTitle:NSLocalizedString(@"CHOOSE_INSTLLLER_TITLE", @"Please choose the install program")];
+	[panel setPrompt:NSLocalizedString(@"CHOOSE_INSTLLLER_PROMPT", @"Choose")];
 	[panel setCanChooseDirectories:NO];
 	[panel setCanChooseFiles:YES];
 	[panel setAllowsMultipleSelection:NO];
@@ -261,9 +261,9 @@ NSFileManager *fm;
 	if ([finalList count] == 0)
 	{
 		NSAlert *alert = [[NSAlert alloc] init];
-		[alert addButtonWithTitle:@"OK"];
-		[alert setMessageText:@"Oops!"];
-		[alert setInformativeText:@"No new executables found!\n\nMaybe the installer failed...?\n\nIf you tried to install somewhere other than C: drive (drive_c in the wrapper) then you will get this message too.  All software must be installed in C: drive."];
+		[alert addButtonWithTitle:NSLocalizedString(@"INSTALLER_NOT_CREATE_EXE_", @"OK")];
+		[alert setMessageText:NSLocalizedString(@"INSTALLER_NOT_CREATE_EXE_TITLE", @"Oops!")];
+		[alert setInformativeText:NSLocalizedString(@"INSTALLER_NOT_CREATE_EXE_TEXT", @"No new executables found!\n\nMaybe the installer failed...?\n\nIf you tried to install somewhere other than C: drive (drive_c in the wrapper) then you will get this message too.  All software must be installed in C: drive.")];
 		[alert setAlertStyle:NSInformationalAlertStyle];
 		[alert runModal];
 		[alert release];
@@ -291,11 +291,11 @@ NSFileManager *fm;
 }
 - (IBAction)copyAFolderInsideButtonPressed:(id)sender
 {
-	[self copyMoveFolder:@"copy"];
+	[self copyMoveFolder:@"copy"]; //It's flag like value? not localize
 }
 - (IBAction)moveAFolderInsideButtonPressed:(id)sender
 {
-	[self copyMoveFolder:@"move"];
+	[self copyMoveFolder:@"move"]; //It's flag like value? not localize
 }
 - (void)copyMoveFolder:(NSString *)command
 {
@@ -304,15 +304,15 @@ NSFileManager *fm;
 		copyIt = YES;
 	NSOpenPanel *panel = [[NSOpenPanel alloc] init];
 	if (copyIt)
-		[panel setTitle:@"Please choose the Folder to COPY in"];
+		[panel setTitle:NSLocalizedString(@"COPY_TO_WRAPPER_TITLE_COPY", @"Please choose the Folder to COPY in")];
 	else
-		[panel setTitle:@"Please choose the Folder to MOVE in"];
-	[panel setPrompt:@"Choose"];
+		[panel setTitle:NSLocalizedString(@"COPY_TO_WRAPPER_TITLE_MOVE", @"Please choose the Folder to MOVE in")];
+	[panel setPrompt:NSLocalizedString(@"COPY_TO_WRAPPER_PROMPT", @"Choose")];
 	[panel setCanChooseDirectories:YES];
 	[panel setCanChooseFiles:NO];
 	[panel setAllowsMultipleSelection:NO];
 	// runModalForDirectory deprecated in 10.6, but only method currently working in Lion beta for this.
-	int error = [panel runModalForDirectory:@"/" file:nil types:[NSArray arrayWithObjects:nil]];
+	int error = [panel runModalForDirectory:@"/" file:nil types:[NSArray arrayWithObjects:nil]]; //NOTE: arrayWithObject requires not nil arg ??
 	//exit method if cancel pushed
 	if (error == 0)
 	{
@@ -341,12 +341,12 @@ NSFileManager *fm;
 	if (!success)
 	{
 		NSAlert *alert = [[NSAlert alloc] init];
-		[alert addButtonWithTitle:@"OK"];
-		[alert setMessageText:@"Oops!"];
+		[alert addButtonWithTitle:NSLocalizedString(@"FAILED_COPY_TO_WRAPPER_OK", @"OK")];
+		[alert setMessageText:NSLocalizedString(@"FAILED_COPY_TO_WRAPPER_TITLE", @"Oops!")];
 		if (copyIt)
-			[alert setInformativeText:@"The copy failed.\n\nYou either do not have permission to copy, or there is already a folder with that name in the wrapper's Program Files folder"];
+			[alert setInformativeText:NSLocalizedString(@"FAILED_COPY_TO_WRAPPER_TEXT_COPY", @"The copy failed.\n\nYou either do not have permission to copy, or there is already a folder with that name in the wrapper's Program Files folder")];
 		else
-			[alert setInformativeText:@"The move failed.\n\nYou either do not have permission to move, or there is already a folder with that name in the wrapper's Program Files folder"];
+			[alert setInformativeText:NSLocalizedString(@"FAILED_COPY_TO_WRAPPER_TEXT_MOVE", @"The move failed.\n\nYou either do not have permission to move, or there is already a folder with that name in the wrapper's Program Files folder")];
 		[alert setAlertStyle:NSInformationalAlertStyle];
 		[alert runModal];
 		[alert release];
@@ -374,12 +374,12 @@ NSFileManager *fm;
 	if ([finalList count] == 0)
 	{
 		NSAlert *alert = [[NSAlert alloc] init];
-		[alert addButtonWithTitle:@"OK"];
-		[alert setMessageText:@"Oops!"];
+		[alert addButtonWithTitle:NSLocalizedString(@"DIRECT_COPY_NOT_CREATE_EXE_OK", @"OK")];
+		[alert setMessageText:NSLocalizedString(@"DIRECT_COPY_NOT_CREATE_EXE_TITLE", @"Oops!")];
 		if (copyIt)
-			[alert setInformativeText:@"No new executables found after copying the selected folder inside the wrapper!"];
+			[alert setInformativeText:NSLocalizedString(@"DIRECT_COPY_NOT_CREATE_EXE_TEXT_COPY", @"No new executables found after copying the selected folder inside the wrapper!")];
 		else
-			[alert setInformativeText:@"No new executables found after moving the selected folder inside the wrapper!"];
+			[alert setInformativeText:NSLocalizedString(@"DIRECT_COPY_NOT_CREATE_EXE_TEXT_MOVE", @"No new executables found after moving the selected folder inside the wrapper!")];
 		[alert setAlertStyle:NSInformationalAlertStyle];
 		[alert runModal];
 		[alert release];
@@ -583,7 +583,7 @@ NSFileManager *fm;
 				[normalWindowsVirtualDesktopToggle deselectAllCells];
 				[normalWindowsVirtualDesktopToggle selectCellWithTag:0];
 				if ([[plistDictionary valueForKey:@"Resolution"] hasPrefix:@"Current Resolution"])
-					[virtualDesktopResolution selectItemWithTitle:@"Current Resolution"];
+					[virtualDesktopResolution selectItemWithTitle:@"Current Resolution"]; //TOOD: 文字列指定は直す
 				else
 				{
 					NSArray *temp = [[plistDictionary valueForKey:@"Resolution"] componentsSeparatedByString:@"x"];
@@ -596,7 +596,7 @@ NSFileManager *fm;
 			//do fullscreen options
 			[fullscreenRootlesToggleTabView selectLastTabViewItem:self];
 			if ([[plistDictionary valueForKey:@"Resolution"] hasPrefix:@"Current Resolution"])
-				[fullscreenResolution selectItemWithTitle:@"Current Resolution"];
+				[fullscreenResolution selectItemWithTitle:@"Current Resolution"]; //TOOD: 文字列指定は直す
 			else
 			{
 				NSArray *temp = [[plistDictionary valueForKey:@"Resolution"] componentsSeparatedByString:@"x"];
@@ -866,10 +866,10 @@ NSFileManager *fm;
 	[self enableButtons];
 	//offer to show logs
 	NSAlert *alert = [[NSAlert alloc] init];
-	[alert addButtonWithTitle:@"View"];
-	[alert addButtonWithTitle:@"Cancel"];
-	[alert setMessageText:@"Test Run Complete!"];
-	[alert setInformativeText:@"Do you wish to view the Test Run Logs?"];
+	[alert addButtonWithTitle:NSLocalizedString(@"SHOW_TEST_LOG_VIEW", @"View")];
+	[alert addButtonWithTitle:NSLocalizedString(@"SHOW_TEST_LOG_CANCEL", @"Cancel")];
+	[alert setMessageText:NSLocalizedString(@"SHOW_TEST_LOG_TITLE", @"Test Run Complete!")];
+	[alert setInformativeText:NSLocalizedString(@"SHOW_TEST_LOG_TEXT", @"Do you wish to view the Test Run Logs?")];
 	[alert setAlertStyle:NSInformationalAlertStyle];
 	if ([alert runModal] == NSAlertFirstButtonReturn)
 	{
@@ -910,10 +910,10 @@ NSFileManager *fm;
     }
 	//give warning message
 	NSAlert *alert = [[NSAlert alloc] init];
-	[alert addButtonWithTitle:@"Yes"];
-	[alert addButtonWithTitle:@"No"];
-	[alert setMessageText:@"Kill Processes, Are you Sure?"];
-	[alert setInformativeText:[NSString stringWithFormat:@"This will kill the following processes (if running) from this wrapper...\n\nWineskinLauncher\nWineskinX11\n%@\n%@",wineName,wineserverName]];
+	[alert addButtonWithTitle:NSLocalizedString(@"KILL_WARNING_YES", @"Yes")];
+	[alert addButtonWithTitle:NSLocalizedString(@"KILL_WARNING_NO", @"No")];
+	[alert setMessageText:NSLocalizedString(@"KILL_WARNING_TITLE", @"Kill Processes, Are you Sure?")];
+	[alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(@"KILL_WARNING_TEXT", @"This will kill the following processes (if running) from this wrapper...\n\nWineskinLauncher\nWineskinX11\n%@\n%@"),wineName,wineserverName]];
 	[alert setAlertStyle:NSInformationalAlertStyle];
 	if ([alert runModal] == NSAlertFirstButtonReturn)
 	{
@@ -1052,8 +1052,8 @@ NSFileManager *fm;
 {
 	//NSOpenPanel *panel = [NSOpenPanel openPanel];
 	NSOpenPanel *panel = [[NSOpenPanel alloc] init];
-	[panel setTitle:@"Please choose the .exe, .msi, or .bat file that should run"];
-	[panel setPrompt:@"Choose"];
+	[panel setTitle:NSLocalizedString(@"EXE_BROWSE_TITLE", @"Please choose the .exe, .msi, or .bat file that should run")];
+	[panel setPrompt:NSLocalizedString(@"EXE_BROWSE_CHOOSE", @"Choose")];
 	[panel setCanChooseDirectories:NO];
 	[panel setCanChooseFiles:YES];
 	[panel setAllowsMultipleSelection:NO];
@@ -1086,8 +1086,8 @@ NSFileManager *fm;
 - (IBAction)iconToUseBrowseButtonPressed:(id)sender
 {
 	NSOpenPanel *panel = [[NSOpenPanel alloc] init];
-	[panel setTitle:@"Please choose the .icns file to use in the wrapper"];
-	[panel setPrompt:@"Choose"];
+	[panel setTitle:NSLocalizedString(@"ICON_BROWSE_TITLE", @"Please choose the .icns file to use in the wrapper")];
+	[panel setPrompt:NSLocalizedString(@"ICON_BROWSE_CHOOSE", @"Choose")];
 	[panel setCanChooseDirectories:NO];
 	[panel setCanChooseFiles:YES];
 	[panel setAllowsMultipleSelection:NO];
@@ -1125,10 +1125,10 @@ NSFileManager *fm;
 - (IBAction)extMinusButtonPressed:(id)sender
 {
 	NSAlert *alert = [[NSAlert alloc] init];
-	[alert addButtonWithTitle:@"OK"];
-	[alert addButtonWithTitle:@"Cancel"];
-	[alert setMessageText:@"Remove entry?"];
-	[alert setInformativeText:@"This will remove the file association, are you sure?"];
+	[alert addButtonWithTitle:NSLocalizedString(@"REMOVE_EXT_ASSOCIATION_OK", @"OK")];
+	[alert addButtonWithTitle:NSLocalizedString(@"REMOVE_EXT_ASSOCIATION_CANCEL", @"Cancel")];
+	[alert setMessageText:NSLocalizedString(@"REMOVE_EXT_ASSOCIATION_TITLE", @"Remove entry?")];
+	[alert setInformativeText:NSLocalizedString(@"REMOVE_EXT_ASSOCIATION_TEXT", @"This will remove the file association, are you sure?")];
 	[alert setAlertStyle:NSInformationalAlertStyle];
 	if ([alert runModal] == NSAlertSecondButtonReturn)
 	{
@@ -1406,10 +1406,10 @@ NSFileManager *fm;
 {
 	//issue warning
 	NSAlert *alert = [[NSAlert alloc] init];
-	[alert addButtonWithTitle:@"Yes"];
-	[alert addButtonWithTitle:@"No"];
-	[alert setMessageText:@"***WARNING!!!!***"];
-	[alert setInformativeText:@"This will remove all contents, including anything installed in drive_c, and registry files, and rebuild them from scratch!  You will lose anything you have installed in the wrapper!\n\nThis data is NOT recoverable!!\n\nAre you sure you want to do this?"];
+	[alert addButtonWithTitle:NSLocalizedString(@"REBUILD_WRAPPER_YES", @"Yes")];
+	[alert addButtonWithTitle:NSLocalizedString(@"REBUILD_WRAPPER_NO", @"No")];
+	[alert setMessageText:NSLocalizedString(@"REBUILD_WRAPPER_TITLE", @"***WARNING!!!!***")];
+	[alert setInformativeText:NSLocalizedString(@"REBUILD_WRAPPER_TEXT", @"This will remove all contents, including anything installed in drive_c, and registry files, and rebuild them from scratch!  You will lose anything you have installed in the wrapper!\n\nThis data is NOT recoverable!!\n\nAre you sure you want to do this?")];
 	[alert setAlertStyle:NSInformationalAlertStyle];
 	if ([alert runModal] == NSAlertFirstButtonReturn)
 	{
@@ -1441,6 +1441,7 @@ NSFileManager *fm;
 }
 - (IBAction)winetricksButtonPressed:(id)sender
 {
+    //It's not use? not localized...
 	/*  Winetricks adding support for having spaces... commenting out check for spaces code for now.
 	if ([[[[NSBundle mainBundle] bundlePath] componentsSeparatedByString:@" "] count] > 1)
 	{
@@ -1502,10 +1503,10 @@ NSFileManager *fm;
 	urlWhereWinetricksIs = [urlWhereWinetricksIs stringByReplacingOccurrencesOfString:@"\n" withString:@""]; //remove \n
 	//confirm update
 	NSAlert *alert = [[NSAlert alloc] init];
-	[alert addButtonWithTitle:@"OK"];
-	[alert addButtonWithTitle:@"Cancel"];
-	[alert setMessageText:@"Please confirm..."];
-	[alert setInformativeText:[NSString stringWithFormat:@"Are you sure you want to update to the latest version of Winetricks?\n\nThe latest version from...\n\t%@\nwill be downloaded and installed for this wrapper.",urlWhereWinetricksIs]];
+	[alert addButtonWithTitle:NSLocalizedString(@"UPDATE_WINETRICKS_OK", @"OK")];
+	[alert addButtonWithTitle:NSLocalizedString(@"UPDATE_WINETRICKS_CANCEL", @"Cancel")];
+	[alert setMessageText:NSLocalizedString(@"UPDATE_WINETRICKS_TITLE", @"Please confirm...")];
+	[alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(@"UPDATE_WINETRICKS_TEXT", @"Are you sure you want to update to the latest version of Winetricks?\n\nThe latest version from...\n\t%@\nwill be downloaded and installed for this wrapper."),urlWhereWinetricksIs]];
 	[alert setAlertStyle:NSInformationalAlertStyle];
 	if ([alert runModal] == NSAlertSecondButtonReturn)
 	{
@@ -1524,9 +1525,9 @@ NSFileManager *fm;
 	if ([newVersion length] < 50)
 	{
 		NSAlert *alert2 = [[NSAlert alloc] init];
-		[alert2 addButtonWithTitle:@"OK"];
-		[alert2 setMessageText:@"Cannot Update!!"];
-		[alert2 setInformativeText:@"Connection to the website failed.  The site is either down currently, or there is a problem with your internet connection."];
+		[alert2 addButtonWithTitle:NSLocalizedString(@"FAILED_UPDATE_WINETRICKS_OK", @"OK")];
+		[alert2 setMessageText:NSLocalizedString(@"FAILED_UPDATE_WINETRICKS_TITLE", @"Cannot Update!!")];
+		[alert2 setInformativeText:NSLocalizedString(@"FAILED_UPDATE_WINETRICKS_TEXT", @"Connection to the website failed.  The site is either down currently, or there is a problem with your internet connection.")];
 		[alert2 setAlertStyle:NSInformationalAlertStyle];
 		[alert2 runModal];
 		[alert2 release];
@@ -1567,10 +1568,10 @@ NSFileManager *fm;
 
 	// Ask for confirmation before running winetricks
 	NSAlert *alert = [[NSAlert alloc] init];
-	[alert addButtonWithTitle:@"Run"];
-	[alert addButtonWithTitle:@"Cancel"];
-	[alert setMessageText:@"Do you wish to run winetricks?"];
-	[alert setInformativeText:[NSString stringWithFormat:@"The following command will be executed:\nwinetricks %@", ([winetricksCustomCheckbox state] ? [[winetricksCustomLine stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] : [[[self winetricksSelectedList] allKeys] componentsJoinedByString:@" "])]];
+	[alert addButtonWithTitle:NSLocalizedString(@"CONFIRM_RUN_WINERICKS_OK", @"Run")];
+	[alert addButtonWithTitle:NSLocalizedString(@"CONFIRM_RUN_WINERICKS_CANCEL", @"Cancel")];
+	[alert setMessageText:NSLocalizedString(@"CONFIRM_RUN_WINERICKS_TITLE", @"Do you wish to run winetricks?")];
+	[alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(@"CONFIRM_RUN_WINERICKS_TEXT", @"The following command will be executed:\nwinetricks %@"), ([winetricksCustomCheckbox state] ? [[winetricksCustomLine stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] : [[[self winetricksSelectedList] allKeys] componentsJoinedByString:@" "])]];
 	[alert setAlertStyle:NSInformationalAlertStyle];
 	if ([alert runModal] != NSAlertFirstButtonReturn)
 	{
@@ -1616,10 +1617,10 @@ NSFileManager *fm;
 {
 	//confirm to kill with big warning window
 	NSAlert *alert = [[NSAlert alloc] init];
-	[alert addButtonWithTitle:@"Yes, do the cancel"];
-	[alert addButtonWithTitle:@"I changed my mind..."];
-	[alert setMessageText:@"Are You Sure?"];
-	[alert setInformativeText:@"Are you sure you want to cancel Winetricks?\n\nThis will kill the running Winetricks process, but has a chance to accidently leave \"sh\" processes running until you manually end them or reboot\n\nIt could also mess up the wrapper where you may need to do a full rebuild to get it working right again (this will not usually be a problem)."];
+	[alert addButtonWithTitle:NSLocalizedString(@"CANCEL_WINETRICKS_OK", @"Yes, do the cancel")];
+	[alert addButtonWithTitle:NSLocalizedString(@"CANCEL_WINETRICKS_CANCEL", @"I changed my mind...")];
+	[alert setMessageText:NSLocalizedString(@"CANCEL_WINETRICKS_TITLE", @"Are You Sure?")];
+	[alert setInformativeText:NSLocalizedString(@"CANCEL_WINETRICKS_TEXT", @"Are you sure you want to cancel Winetricks?\n\nThis will kill the running Winetricks process, but has a chance to accidently leave \"sh\" processes running until you manually end them or reboot\n\nIt could also mess up the wrapper where you may need to do a full rebuild to get it working right again (this will not usually be a problem).")];
 	[alert setAlertStyle:NSInformationalAlertStyle];
 	if ([alert runModal] == NSAlertSecondButtonReturn)
 	{
@@ -1869,7 +1870,7 @@ NSFileManager *fm;
 	}
 	else
     {
-		[self setWinetricksCachedList:[NSDictionary dictionary]];
+		[self setWinetricksCachedList:[NSDictionary dictionary]]; //TODO: fix warning
     }
 	[pool release];
 }
@@ -1937,8 +1938,8 @@ NSFileManager *fm;
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	[winetricksOutputText setEditable:YES];
-	if (winetricksCanceled) [winetricksOutputText insertText:@"\n\n Winetricks CANCELED!!\nIt is possible that there are now problems with the wrapper, or other shell processes may have accidently been affected as well.  Usually its best to not cancel Winetricks, but in many cases it will not hurt.  You may need to refresh the wrapper, or in bad cases do a rebuild.\n\n"];
-	[winetricksOutputText insertText:@"\n\n Winetricks Commands Finished!!\n\n"];
+	if (winetricksCanceled) [winetricksOutputText insertText:NSLocalizedString(@"WINETRICKS_FINISH_TEXT_INTERRUPTED", @"\n\n Winetricks CANCELED!!\nIt is possible that there are now problems with the wrapper, or other shell processes may have accidently been affected as well.  Usually its best to not cancel Winetricks, but in many cases it will not hurt.  You may need to refresh the wrapper, or in bad cases do a rebuild.\n\n")];
+	[winetricksOutputText insertText:NSLocalizedString(@"WINETRICKS_FINISH_TEXT_COMPLEATE", @"\n\n Winetricks Commands Finished!!\n\n")];
 	[winetricksOutputText setEditable:NO];
 	[pool release];
 }
@@ -2001,9 +2002,9 @@ NSFileManager *fm;
 	if ([[cEXENameToUseTextField stringValue] isEqualToString:@""])
 	{
 		NSAlert *alert = [[NSAlert alloc] init];
-		[alert addButtonWithTitle:@"OK"];
-		[alert setMessageText:@"Oops!"];
-		[alert setInformativeText:@"You must type in a name to use!"];
+		[alert addButtonWithTitle:NSLocalizedString(@"CEXE_NAME_BLANK_OK", @"OK")];
+		[alert setMessageText:NSLocalizedString(@"CEXE_NAME_BLANK_TITLE", @"Oops!")];
+		[alert setInformativeText:NSLocalizedString(@"CEXE_NAME_BLANK_TEXT", @"You must type in a name to use!")];
 		[alert setAlertStyle:NSInformationalAlertStyle];
 		[alert runModal];
 		[alert release];
@@ -2012,9 +2013,9 @@ NSFileManager *fm;
 	else if ([[cEXEWindowsExeTextField stringValue] isEqualToString:@""])
 	{
 		NSAlert *alert = [[NSAlert alloc] init];
-		[alert addButtonWithTitle:@"OK"];
-		[alert setMessageText:@"Oops!"];
-		[alert setInformativeText:@"You must choose an executable to run!"];
+		[alert addButtonWithTitle:NSLocalizedString(@"CEXE_FILE_BLANK_OK", @"OK")];
+		[alert setMessageText:NSLocalizedString(@"CEXE_FILE_BLANK_TITLE", @"Oops!")];
+		[alert setInformativeText:NSLocalizedString(@"CEXE_FILE_BLANK_TEXT", @"You must choose an executable to run!")];
 		[alert setAlertStyle:NSInformationalAlertStyle];
 		[alert runModal];
 		[alert release];
@@ -2024,9 +2025,9 @@ NSFileManager *fm;
 	if ([fm fileExistsAtPath:[NSString stringWithFormat:@"%@/%@.app",[[[NSBundle mainBundle] bundlePath] stringByDeletingLastPathComponent],[cEXENameToUseTextField stringValue]]])
 	{
 		NSAlert *alert = [[NSAlert alloc] init];
-		[alert addButtonWithTitle:@"OK"];
-		[alert setMessageText:@"Oops! File already exists!"];
-		[alert setInformativeText:@"That name is already in use, please choose a different name."];
+		[alert addButtonWithTitle:NSLocalizedString(@"CEXE_NAME_ALREADY_EXIST_OK", @"OK")];
+		[alert setMessageText:NSLocalizedString(@"CEXE_NAME_ALREADY_EXIST_TITLE", @"Oops! File already exists!")];
+		[alert setInformativeText:NSLocalizedString(@"CEXE_NAME_ALREADY_EXIST_TEXT", @"That name is already in use, please choose a different name.")];
 		[alert setAlertStyle:NSInformationalAlertStyle];
 		[alert runModal];
 		[alert release];
@@ -2095,9 +2096,9 @@ NSFileManager *fm;
 	[fm moveItemAtPath:@"/tmp/Wineskin.icns" toPath:[NSString stringWithFormat:@"%@/%@.app/Contents/Resources/Wineskin.icns",[[[NSBundle mainBundle] bundlePath] stringByDeletingLastPathComponent],[cEXENameToUseTextField stringValue]] error:nil];
 	//give done message
 	NSAlert *alert = [[NSAlert alloc] init];
-	[alert addButtonWithTitle:@"OK"];
-	[alert setMessageText:@"Done!"];
-	[alert setInformativeText:@"The Custom Exe Launcher has been made and can be found just inside the wrapper along with Wineskin.app.\n\nIf you want to be able to access it from outside of the app, just make and use an alias to it."];
+	[alert addButtonWithTitle:NSLocalizedString(@"CEXE_CREATED_OK", @"OK")];
+	[alert setMessageText:NSLocalizedString(@"CEXE_CREATED_TITLE", @"Done!")];
+	[alert setInformativeText:NSLocalizedString(@"CEXE_CREATED_TEXT", @"The Custom Exe Launcher has been made and can be found just inside the wrapper along with Wineskin.app.\n\nIf you want to be able to access it from outside of the app, just make and use an alias to it.")];
 	[alert setAlertStyle:NSInformationalAlertStyle];
 	[alert runModal];
 	[alert release];
@@ -2152,8 +2153,8 @@ NSFileManager *fm;
 {
 	//NSOpenPanel *panel = [NSOpenPanel openPanel];
 	NSOpenPanel *panel = [[NSOpenPanel alloc] init];
-	[panel setTitle:@"Please choose the .icns file to use in the wrapper"];
-	[panel setPrompt:@"Choose"];
+	[panel setTitle:NSLocalizedString(@"CEXE_ICON_BROWSE_TITLE", @"Please choose the .icns file to use in the wrapper")];
+	[panel setPrompt:NSLocalizedString(@"CEXE_ICON_BROWSE_CHOOSE", @"Choose")];
 	[panel setCanChooseDirectories:NO];
 	[panel setCanChooseFiles:YES];
 	[panel setAllowsMultipleSelection:NO];
@@ -2263,9 +2264,9 @@ NSFileManager *fm;
 	if (!([fm fileExistsAtPath:[NSString stringWithFormat:@"%@/Library/Application Support/Wineskin/7za",NSHomeDirectory()]]))
 	{
 		NSAlert *alert = [[NSAlert alloc] init];
-		[alert addButtonWithTitle:@"OK"];
-		[alert setMessageText:@"ERROR!"];
-		[alert setInformativeText:@"Cannot continue... files missing.  Please try reinstalling an engine manually, or running Wineskin Winery.  Either should attempt to fix the problem."];
+		[alert addButtonWithTitle:NSLocalizedString(@"ARCHIVER_NOT_FOND_OK", @"OK")];
+		[alert setMessageText:NSLocalizedString(@"ARCHIVER_NOT_FOND_TITLE", @"ERROR!")];
+		[alert setInformativeText:NSLocalizedString(@"ARCHIVER_NOT_FOND_TEXT", @"Cannot continue... files missing.  Please try reinstalling an engine manually, or running Wineskin Winery.  Either should attempt to fix the problem.")];
 		[alert setAlertStyle:NSInformationalAlertStyle];
 		[alert runModal];
 		[alert release];
@@ -2326,9 +2327,9 @@ NSFileManager *fm;
 	if ([files count] != 1)
 	{
 		NSAlert *alert = [[NSAlert alloc] init];
-		[alert addButtonWithTitle:@"OK"];
-		[alert setMessageText:@"Oops!"];
-		[alert setInformativeText:@"There is an error with the installation of your Master Wrapper.  Please update your Wrapper in Wineskin Winery (a manual install of a wrapper for Wineskin Winery will work too)"];
+		[alert addButtonWithTitle:NSLocalizedString(@"UPDATE_WRAPPER_ERROR_OK", @"OK")];
+		[alert setMessageText:NSLocalizedString(@"UPDATE_WRAPPER_ERROR_TITLE", @"Oops!")];
+		[alert setInformativeText:NSLocalizedString(@"UPDATE_WRAPPER_ERROR_TEXT", @"There is an error with the installation of your Master Wrapper.  Please update your Wrapper in Wineskin Winery (a manual install of a wrapper for Wineskin Winery will work too)")];
 		[alert setAlertStyle:NSInformationalAlertStyle];
 		[alert runModal];
 		[alert release];
@@ -2341,10 +2342,10 @@ NSFileManager *fm;
 	if ([currentWrapperVersion isEqualToString:masterWrapperName])
 	{
 		NSAlert *alert = [[NSAlert alloc] init];
-		[alert addButtonWithTitle:@"Do Not Update"];
-		[alert addButtonWithTitle:@"Update"];
-		[alert setMessageText:@"No update needed"];
-		[alert setInformativeText:@"Your wrapper version matches the master wrapper version... no update needed.  Do you want to force an update?"];
+		[alert addButtonWithTitle:NSLocalizedString(@"UPDATE_WRAPPER_LATEST_NO", @"Do Not Update")];
+		[alert addButtonWithTitle:NSLocalizedString(@"UPDATE_WRAPPER_LATEST_YES", @"Update")];
+		[alert setMessageText:NSLocalizedString(@"UPDATE_WRAPPER_LATEST_TITLE", @"No update needed")];
+		[alert setInformativeText:NSLocalizedString(@"UPDATE_WRAPPER_LATEST_TEXT", @"Your wrapper version matches the master wrapper version... no update needed.  Do you want to force an update?")];
 		[alert setAlertStyle:NSInformationalAlertStyle];
 		if ([alert runModal] != NSAlertSecondButtonReturn)
 		{
@@ -2356,10 +2357,10 @@ NSFileManager *fm;
 	}
 	//confirm wrapper change
 	NSAlert *alert = [[NSAlert alloc] init];
-	[alert addButtonWithTitle:@"OK"];
-	[alert addButtonWithTitle:@"Cancel"];
-	[alert setMessageText:@"Please confirm..."];
-	[alert setInformativeText:@"Are you sure you want to do this update?  It will change out the wrappers main Wineskin files with newer copies from whatever Master Wrapper you have installed with Wineskin Winery.  The following files/folders will be replaced in the wrapper:\nWineskin.app\nContents/MacOS\nContents/Frameworks\nContents/Resources/English.lproj/MainMenu.nib\nContents/Resources/English.lproj/main.nib"];
+	[alert addButtonWithTitle:NSLocalizedString(@"UPDATE_WRAPPER_CONFIRM_OK", @"OK")];
+	[alert addButtonWithTitle:NSLocalizedString(@"UPDATE_WRAPPER_CONFIRM_CANCEL", @"Cancel")];
+	[alert setMessageText:NSLocalizedString(@"UPDATE_WRAPPER_CONFIRM_TITLE", @"Please confirm...")];
+	[alert setInformativeText:NSLocalizedString(@"UPDATE_WRAPPER_CONFIRM_TEXT", @"Are you sure you want to do this update?  It will change out the wrappers main Wineskin files with newer copies from whatever Master Wrapper you have installed with Wineskin Winery.  The following files/folders will be replaced in the wrapper:\nWineskin.app\nContents/MacOS\nContents/Frameworks\nContents/Resources/English.lproj/MainMenu.nib\nContents/Resources/English.lproj/main.nib")];
 	[alert setAlertStyle:NSInformationalAlertStyle];
 	if ([alert runModal] == NSAlertSecondButtonReturn)
 	{
@@ -2381,9 +2382,9 @@ NSFileManager *fm;
 		{
 			//delete WineskinEngine.bundle
 			NSAlert *alert2 = [[NSAlert alloc] init];
-			[alert2 addButtonWithTitle:@"OK"];
-			[alert2 setMessageText:@"Warning"];
-			[alert2 setInformativeText:@"Warning, ICE engine detected.  Engine will not be converted, you must choose a new WS8+ engine manually later (Change Engine in Wineskin.app)"];
+			[alert2 addButtonWithTitle:NSLocalizedString(@"UPDATE_WRAPPER_DETECT_ICE_OK", @"OK")];
+			[alert2 setMessageText:NSLocalizedString(@"UPDATE_WRAPPER_DETECT_ICE_TITLE", @"Warning")];
+			[alert2 setInformativeText:NSLocalizedString(@"UPDATE_WRAPPER_DETECT_ICE_TEXT", @"Warning, ICE engine detected.  Engine will not be converted, you must choose a new WS8+ engine manually later (Change Engine in Wineskin.app)")];
 			[alert2 setAlertStyle:NSInformationalAlertStyle];
 			[alert2 runModal];
 			[alert2 release];
@@ -2537,9 +2538,9 @@ NSFileManager *fm;
 	if ([[extExtensionTextField stringValue] isEqualToString:@""] || [[extCommandTextField stringValue] isEqualToString:@""])
 	{
 		NSAlert *alert = [[NSAlert alloc] init];
-		[alert addButtonWithTitle:@"Oops!"];
-		[alert setMessageText:@"Error"];
-		[alert setInformativeText:@"You left an entry field blank..."];
+		[alert addButtonWithTitle:NSLocalizedString(@"EXT_BLANK_OK", @"Oops!")];
+		[alert setMessageText:NSLocalizedString(@"EXT_BLANK_TITLE", @"Error")];
+		[alert setInformativeText:NSLocalizedString(@"EXT_BLANK_TEXT", @"You left an entry field blank...")];
 		[alert setAlertStyle:NSInformationalAlertStyle];
 		[alert runModal];
 		[alert release];
@@ -2667,8 +2668,8 @@ NSFileManager *fm;
 - (IBAction)modifyMappingsMyDocumentsBrowseButtonPressed:(id)sender
 {
 	NSOpenPanel *panel = [[NSOpenPanel alloc] init];
-	[panel setTitle:@"Please choose the Folder \"My Documents\" should map to"];
-	[panel setPrompt:@"Choose"];
+	[panel setTitle:NSLocalizedString(@"FOLDER_MAP_CHOOSE_MYDOCUMENTS_TITLE", @"Please choose the Folder \"My Documents\" should map to")];
+	[panel setPrompt:NSLocalizedString(@"FOLDER_MAP_CHOOSE_MYDOCUMENTS_CHOOSE",  @"Choose")];
 	[panel setCanChooseDirectories:YES];
 	[panel setCanChooseFiles:NO];
 	[panel setAllowsMultipleSelection:NO];
@@ -2682,8 +2683,8 @@ NSFileManager *fm;
 - (IBAction)modifyMappingsMyDesktopBrowseButtonPressed:(id)sender
 {
 	NSOpenPanel *panel = [[NSOpenPanel alloc] init];
-	[panel setTitle:@"Please choose the Folder \"Desktop\" should map to"];
-	[panel setPrompt:@"Choose"];
+	[panel setTitle:NSLocalizedString(@"FOLDER_MAP_CHOOSE_MYDESKTOP_TITLE", @"Please choose the Folder \"Desktop\" should map to")];
+	[panel setPrompt:NSLocalizedString(@"FOLDER_MAP_CHOOSE_MYDESKTOP_CHOOSE", @"Choose")];
 	[panel setCanChooseDirectories:YES];
 	[panel setCanChooseFiles:NO];
 	[panel setAllowsMultipleSelection:NO];
@@ -2697,8 +2698,8 @@ NSFileManager *fm;
 - (IBAction)modifyMappingsMyVideosBrowseButtonPressed:(id)sender
 {
 	NSOpenPanel *panel = [[NSOpenPanel alloc] init];
-	[panel setTitle:@"Please choose the Folder \"My Videos\" should map to"];
-	[panel setPrompt:@"Choose"];
+	[panel setTitle:NSLocalizedString(@"FOLDER_MAP_CHOOSE_MYVIDEOS_TITLE", @"Please choose the Folder \"My Videos\" should map to")];
+	[panel setPrompt:NSLocalizedString(@"FOLDER_MAP_CHOOSE_MYVIDEOS_CHOOSE", @"Choose")];
 	[panel setCanChooseDirectories:YES];
 	[panel setCanChooseFiles:NO];
 	[panel setAllowsMultipleSelection:NO];
@@ -2712,8 +2713,8 @@ NSFileManager *fm;
 - (IBAction)modifyMappingsMyMusicBrowseButtonPressed:(id)sender
 {
 	NSOpenPanel *panel = [[NSOpenPanel alloc] init];
-	[panel setTitle:@"Please choose the Folder \"My Music\" should map to"];
-	[panel setPrompt:@"Choose"];
+	[panel setTitle:NSLocalizedString(@"FOLDER_MAP_CHOOSE_MYMUSIC_TITLE", @"Please choose the Folder \"My Music\" should map to")];
+	[panel setPrompt:NSLocalizedString(@"FOLDER_MAP_CHOOSE_MYMUSIC_CHOOSE", @"Choose")];
 	[panel setCanChooseDirectories:YES];
 	[panel setCanChooseFiles:NO];
 	[panel setAllowsMultipleSelection:NO];
@@ -2727,8 +2728,8 @@ NSFileManager *fm;
 - (IBAction)modifyMappingsMyPicturesBrowseButtonPressed:(id)sender
 {
 	NSOpenPanel *panel = [[NSOpenPanel alloc] init];
-	[panel setTitle:@"Please choose the Folder \"My Pictures\" should map to"];
-	[panel setPrompt:@"Choose"];
+	[panel setTitle:NSLocalizedString(@"FOLDER_MAP_CHOOSE_MYPICTURES_TITLE", @"Please choose the Folder \"My Pictures\" should map to")];
+	[panel setPrompt:NSLocalizedString(@"FOLDER_MAP_CHOOSE_MYPICTURES_CHOOSE", @"Choose")];
 	[panel setCanChooseDirectories:YES];
 	[panel setCanChooseFiles:NO];
 	[panel setAllowsMultipleSelection:NO];

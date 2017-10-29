@@ -1,0 +1,184 @@
+/* 
+  Localizable.strings
+  Wineskin Winery
+
+  Created by kysaeed on 2017/02/04.
+
+*/
+
+
+/*
+ - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+ */
+
+// MacOS Version Warning Alart
+"MAC_OS_VERSION_WARNING_OK" = "Ok, I got it!";
+"MAC_OS_VERSION_WARNING_TITLE" = "Mac OS X 10.5 Warning";
+"MAC_OS_VERSION_WARNING_TEXT" = "Wineskin no longer supports Mac OS X 10.5!\n\nYou may want to upgrade your OS!\n\nIf you want to use Wineskin Winery on 10.5 you can, but the built in downloads will get 10.6+ compatible files.\n\nTo use this on 10.5, you must get Manual Download files and only use Wineskin 2.5.3 - 2.5.4 and WS8 based engines.\n\nWineskin 2.5.5+ and WS9 engines are Mac OS X 10.6+ only!";
+
+
+/*
+ - (void)runConverter
+ */
+
+//offer to convert all engines to WS8 Alart
+"ENGINE_CONVERT_OK" = "Convert!";
+"ENGINE_CONVERT_CANCEL" = "Not Now";
+"ENGINE_CONVERT_TITLE" = "Convert Older Engines?";
+"ENGINE_CONVERT_TEXT" = "Wineskin 2.5+ will only use WS8+ engines.\nYou have some WS5/WS6/WS7 engines installed.\n\nWould you like to convert these into WS8 Engines?\n(this could take a while if you have many)";
+
+
+/*
+ - (void)checkForUpdates
+ */
+
+//Wineskin Update Alart
+"WINESKIN_UPDATE_OK" = "Do Update";
+"WINESKIN_UPDATE_CANCEL" = "Cancel";
+"WINESKIN_UPDATE_TITLE" = "Update Available!";
+"WINESKIN_UPDATE_TEXT" = "An Update to Wineskin Winery is available, would you like to update now?";
+
+//Wineskin not updating warning Alart
+"WINESKIN_NOT_UPDATING_WARNING_OK" = "OK";
+"WINESKIN_NOT_UPDATING_WARNING_TITLE" = "Warning!";
+"WINESKIN_NOT_UPDATING_WARNING_TEXT" = "Some things may not function properly with new Wrappers or Engines until you update!";
+
+
+/*
+ - (IBAction)minusButtonPressed:(id)sender
+ */
+
+//Delete Engine confirm Alart
+"DELETE_ENGINE_CONFIRM_OK" = "Yes";
+"DELETE_ENGINE_CONFIRM_CANCEL" = "Cancel";
+"DELETE_ENGINE_CONFIRM_TITLE" = "Confirm Deletion";
+"DELETE_ENGINE_CONFIRM_TEXT" = "Are you sure you want to delete the engine \"%@\"";
+
+
+/*
+ - (IBAction)updateButtonPressed:(id)sender
+ */
+
+//Update Error Alart
+"WINESKIN_UPDATE_ERROR_OK" = "OK";
+"WINESKIN_UPDATE_ERROR_TITLE" = "Oops!";
+"WINESKIN_UPDATE_ERROR_TEXT" = "Error, connection to download failed!";
+
+
+/*
+ - (NSString *)getCurrentWrapperVersion
+ */
+
+//Current Wrapper Not Found String
+"CURRENT_WRAPPER_NOT_FOUND" = "No Wrapper Installed";
+
+//Current Wrapper Folder Error String
+"CURRENT_WRAPPER_FOLDER_ERROR" = "Error In Wrapper Folder";
+
+
+/*
+ - (IBAction)engineBuildChooseButtonPressed:(id)sender
+ */
+
+//Chose Wine Source Folder Panel
+"CHOOSE_WINE_SOURCE_TITLE" = "Choose Wine Source Folder";
+"CHOOSE_WINE_SOURCE_PROMPT" = "Choose";
+
+
+/*
+ - (IBAction)engineBuildBuildButtonPressed:(id)sender
+ */
+
+//Wine Source Not Specified Alart
+"WINE_SOURCE_NOT_SPECIFY_OK" = "OK";
+"WINE_SOURCE_NOT_SPECIFY_TITLE" = "Oops!";
+"WINE_SOURCE_NOT_SPECIFY_TEXT" = "You must select a folder with the Wine source code and a valid engine name";
+
+//Wine Engine Name Not Specified Alart
+"WINE_ENGINE_NAME_NOT_SPECIFY_OK" = "OK";
+"WINE_ENGINE_NAME_NOT_SPECIFY_TITLE" = "Oops!";
+"WINE_ENGINE_NAME_NOT_SPECIFY_TEXT" = "You must enter a name for the Engine";
+
+//Wine Engine Name already in use Alart
+"WINE_ENGINE_NAME_ALREADY_USE_OK" = "OK";
+"WINE_ENGINE_NAME_ALREADY_USE_TITLE" = "Oops!";
+"WINE_ENGINE_NAME_ALREADY_USE_TEXT" = "That engine name is already in use!";
+
+//Wine Engine build prompt Alart
+"WINE_ENGINE_BUILD_PROMPT_OK" = "OK";
+"WINE_ENGINE_BUILD_PROMPT_TITLE" = "WARNING!";
+"WINE_ENGINE_BUILD_PROMPT_TEXT" = "This build will fail if you use Wineskin Winery, Wineskin, or any Wineskin wrapper while it is running!!!";
+
+
+/*
+ - (NSString *)currentEngineBuildVersion
+ */
+
+//Wine engine base not found
+"WINE_ENGINE_BASE_NOT_FOUND" = "No Engine Base Installed";
+
+//Wine engine base folder error
+"WINE_ENGINE_BASE_FOLDER_ERROR" = "Error In Engine Base Folder";
+
+
+/*
+ - (IBAction) startDownload:(NSButton *)sender;
+ */
+
+//Download Error Alart
+"DOWNLOAD_ERROR_OK" = "OK";
+"DOWNLOAD_ERROR_TITLE" = "Download Failed!";
+"DOWNLOAD_ERROR_TEXT" = "unable to download!";
+
+
+/*
+ - (IBAction) stopDownloading:(NSButton *)sender
+ */
+
+//display warning about not updating
+"NOT_UPDATE_WARNING_OK" = "OK";
+"NOT_UPDATE_WARNING_TITLE" = "Warning!";
+"NOT_UPDATE_WARNING_TEXT" = "Some things may not function properly with new Wrappers or Engines until you update!";
+
+/*
+ - (void)connection:(NSURLConnection *)conn didFailWithError:(NSError *)error
+ */
+
+//display connection error
+"CONNECTION_RESULT_OK" = "OK";
+
+
+/*
+ - (IBAction)createWrapperOkButtonPressed:(id)sender
+ */
+
+//Wrapper already exists Alart
+"WRAPPER_ALREADY_EXISTS_OK" = "OK";
+"WRAPPER_ALREADY_EXISTS_TITLE" = "Oops! File already exists!";
+"WRAPPER_ALREADY_EXISTS_TEXT" = "A wrapper at \"%@/Applications/Wineskin\" with the name \"%@\" already exists!  Please choose a different name.";
+
+
+/*
+ - (IBAction)createWrapperOkButtonPressed:(id)sender
+ */
+
+//Engine Error Alart
+"ENGINE_ERROR_OK" = "OH NO!!";
+"ENGINE_ERROR_TITLE" = "ERROR!";
+"ENGINE_ERROR_TEXT" = "The engine %@ is corrupted or opened incorrectly. If this error continues next time you try, reinstall the selected engine";
+
+//put ending message Alart
+"WRAPPER_CREATE_END_FINDER" = "View wrapper in Finder";
+"WRAPPER_CREATE_END_OK" = "OK";
+"WRAPPER_CREATE_END_TITLE" = "Wrapper Creation Finished";
+"WRAPPER_CREATE_END_TEXT" = "Created File: %@.app\n\nCreated In:%@/Applications/Wineskin\n";
+
+
+/*
+ - (id)init
+ */
+
+//Engine list placeholder on initialize
+"ENGINE_LIST_INITALIZE_TEXT" = "Please Wait...";
+
+

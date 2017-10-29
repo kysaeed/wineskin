@@ -1,0 +1,184 @@
+/* 
+  Localizable.strings
+  Wineskin Winery JP
+
+  Created by kysaeed on 2017/02/04.
+
+*/
+
+
+/*
+ - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+ */
+
+// MacOS Version Warning Alart
+"MAC_OS_VERSION_WARNING_OK" = "了承";
+"MAC_OS_VERSION_WARNING_TITLE" = "Mac OS X 10.5 Warning";
+"MAC_OS_VERSION_WARNING_TEXT" = "Wineskin はMac OS X 10.5をすでにサポートしていません！\n\nOSをアップデートしてください！\n\n10.5でWineskinを使う場合は、Wineskinとエンジンの自動ダウンロードは使用できないので\nWineskin 2.5.3 - 2.5.4とWS8 ベースのエンジンを手動でダウンロードしてください\n\nWineskin 2.5.5+とWS9エンジンは Mac OS X 10.6以上のみサポートします";
+
+
+/*
+ - (void)runConverter
+ */
+
+//offer to convert all engines to WS8 Alart
+"ENGINE_CONVERT_OK" = "変換！";
+"ENGINE_CONVERT_CANCEL" = "今はしない";
+"ENGINE_CONVERT_TITLE" = "古いエンジンの変換";
+"ENGINE_CONVERT_TEXT" = "Wineskin 2.5以上はWS8以上のエンジンに対応しています\n\n古いエンジン（WS5/WS6/WS7）がインストールされているので\nエンジンをWS8に変換してください\n（この処理には時間がかかる場合があります）";
+
+
+/*
+ - (void)checkForUpdates
+ */
+
+//Wineskin Update Alart
+"WINESKIN_UPDATE_OK" = "アップデートする";
+"WINESKIN_UPDATE_CANCEL" = "キャンセル";
+"WINESKIN_UPDATE_TITLE" = "Wineskinアップデート";
+"WINESKIN_UPDATE_TEXT" = "Wineskin Wineryをアップデートできます。アップデートしますか？";
+
+//Wineskin not updating warning Alart
+"WINESKIN_NOT_UPDATING_WARNING_OK" = "OK";
+"WINESKIN_NOT_UPDATING_WARNING_TITLE" = "注意してください";
+"WINESKIN_NOT_UPDATING_WARNING_TEXT" = "アップデートするまでWineskinは正しく動作しないかもしれません";
+
+
+/*
+ - (IBAction)minusButtonPressed:(id)sender
+ */
+
+//Delete Engine confirm Alart
+"DELETE_ENGINE_CONFIRM_OK" = "実行";
+"DELETE_ENGINE_CONFIRM_CANCEL" = "キャンセル";
+"DELETE_ENGINE_CONFIRM_TITLE" = "エンジン削除の確認";
+"DELETE_ENGINE_CONFIRM_TEXT" = "エンジン \"%@\" を削除します。よろしいですか？";
+
+
+/*
+ - (IBAction)updateButtonPressed:(id)sender
+ */
+
+//Update Error Alart
+"WINESKIN_UPDATE_ERROR_OK" = "OK";
+"WINESKIN_UPDATE_ERROR_TITLE" = "ダウンロードエラー";
+"WINESKIN_UPDATE_ERROR_TEXT" = "ダウンロードに失敗しました";
+
+
+/*
+ - (NSString *)getCurrentWrapperVersion
+ */
+
+//Current Wrapper Not Found String
+"CURRENT_WRAPPER_NOT_FOUND" = "ラッパーがありません";
+
+//Current Wrapper Folder Error String
+"CURRENT_WRAPPER_FOLDER_ERROR" = "ラッパーフォルダの内容が壊れています";
+
+
+/*
+ - (IBAction)engineBuildChooseButtonPressed:(id)sender
+ */
+
+//Chose Wine Source Folder Panel
+"CHOOSE_WINE_SOURCE_TITLE" = "Wineのソースフォルダを選択";
+"CHOOSE_WINE_SOURCE_PROMPT" = "選択";
+
+
+/*
+ - (IBAction)engineBuildBuildButtonPressed:(id)sender
+ */
+
+//Wine Source Not Specified Alart
+"WINE_SOURCE_NOT_SPECIFY_OK" = "OK";
+"WINE_SOURCE_NOT_SPECIFY_TITLE" = "失敗！";
+"WINE_SOURCE_NOT_SPECIFY_TEXT" = "Wineのソースフォルダとエンジンの名前を指定してください";
+
+//Wine Engine Name Not Specified Alart
+"WINE_ENGINE_NAME_NOT_SPECIFY_OK" = "OK";
+"WINE_ENGINE_NAME_NOT_SPECIFY_TITLE" = "失敗！";
+"WINE_ENGINE_NAME_NOT_SPECIFY_TEXT" = "エンジンの名前を指定してください";
+
+//Wine Engine Name already in use Alart
+"WINE_ENGINE_NAME_ALREADY_USE_OK" = "OK";
+"WINE_ENGINE_NAME_ALREADY_USE_TITLE" = "失敗！";
+"WINE_ENGINE_NAME_ALREADY_USE_TEXT" = "エンジンの名前がすでに使用されています";
+
+//Wine Engine build prompt Alart
+"WINE_ENGINE_BUILD_PROMPT_OK" = "OK";
+"WINE_ENGINE_BUILD_PROMPT_TITLE" = "注意！";
+"WINE_ENGINE_BUILD_PROMPT_TEXT" = "Wineskin Winery、Wineskin、Wineskinラッパーをビルド中に起動しないでください";
+
+
+/*
+ - (NSString *)currentEngineBuildVersion
+ */
+
+//Wine engine base not found
+"WINE_ENGINE_BASE_NOT_FOUND" = "指定されたエンジン（ベース）がありません";
+
+//Wine engine base folder error
+"WINE_ENGINE_BASE_FOLDER_ERROR" = "エンジンフォルダの内容が壊れています";
+
+
+/*
+ - (IBAction) startDownload:(NSButton *)sender;
+ */
+
+//Download Error Alart
+"DOWNLOAD_ERROR_OK" = "OK";
+"DOWNLOAD_ERROR_TITLE" = "ダウンロード失敗！";
+"DOWNLOAD_ERROR_TEXT" = "ダウンロードできませんでした";
+
+
+/*
+ - (IBAction) stopDownloading:(NSButton *)sender
+ */
+
+//display warning about not updating
+"NOT_UPDATE_WARNING_OK" = "OK";
+"NOT_UPDATE_WARNING_TITLE" = "注意！";
+"NOT_UPDATE_WARNING_TEXT" = "アップデート中はWineskinが正しく動作しないかもしれません";
+
+/*
+ - (void)connection:(NSURLConnection *)conn didFailWithError:(NSError *)error
+ */
+
+//display connection error
+"CONNECTION_RESULT_OK" = "OK";
+
+
+/*
+ - (IBAction)createWrapperOkButtonPressed:(id)sender
+ */
+
+//Wrapper already exists Alart
+"WRAPPER_ALREADY_EXISTS_OK" = "OK";
+"WRAPPER_ALREADY_EXISTS_TITLE" = "作成エラー！";
+"WRAPPER_ALREADY_EXISTS_TEXT" = "フォルダ\"%@/Applications/Wineskin\" に \"%@\" はすでに存在します！ 別の名前にしてください";
+
+
+/*
+ - (IBAction)createWrapperOkButtonPressed:(id)sender
+ */
+
+//Engine Error Alart
+"ENGINE_ERROR_OK" = "なんてこった!!";
+"ENGINE_ERROR_TITLE" = "エラー！";
+"ENGINE_ERROR_TEXT" = "エンジン:%@ は壊れています。このエラーが何度も出る場合は、エンジンを再インストールしてください";
+
+//put ending message Alart
+"WRAPPER_CREATE_END_FINDER" = "Finderで表示";
+"WRAPPER_CREATE_END_OK" = "OK";
+"WRAPPER_CREATE_END_TITLE" = "ラッパー作成が完了";
+"WRAPPER_CREATE_END_TEXT" = "ラッパー: %@.appを作成しました\n\n（フォルダ:%@/Applications/Wineskin）\n";
+
+
+/*
+ - (id)init
+ */
+
+//Engine list placeholder on initialize
+"ENGINE_LIST_INITALIZE_TEXT" = "処理中...";
+
+

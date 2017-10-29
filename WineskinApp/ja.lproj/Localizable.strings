@@ -1,0 +1,283 @@
+/* 
+  Localizable.strings
+  Wineskin
+
+  Created by kysaeed on 2017/02/06.
+
+*/
+
+
+/*
+ - (IBAction)chooseSetupExecutableButtonPressed:(id)sender
+ */
+
+//choose the installer
+"CHOOSE_INSTLLLER_TITLE" = "実行するインストーラーを選択";
+"CHOOSE_INSTLLLER_PROMPT" = "選択";
+
+//Installer was not Create Exe...
+"INSTALLER_NOT_CREATE_EXE_OK" = "OK";
+"INSTALLER_NOT_CREATE_EXE_TITLE" = "失敗！";
+"INSTALLER_NOT_CREATE_EXE_TEXT" = "実行できるプログラムがありません\n\nインストーラーが失敗したせいかもしれません...\n\nC:ドライブ以外にはインストールできません。プログラムは必ず C:ドライブにインストールしてください";
+
+
+/*
+ - (void)copyMoveFolder:(NSString *)command
+ */
+
+//Direct copy exe to inside wrapper. choose
+"COPY_TO_WRAPPER_TITLE_COPY" = "コピーするフォルダの選択"; // by copy
+"COPY_TO_WRAPPER_TITLE_MOVE" = "移動するフォルダの選択"; // by move
+"COPY_TO_WRAPPER_PROMPT" = "選択";
+
+//FAILED Direct copy exe to inside wrapper Alart
+"FAILED_COPY_TO_WRAPPER_OK" = "OK";
+"FAILED_COPY_TO_WRAPPER_TITLE" = "失敗！";
+"FAILED_COPY_TO_WRAPPER_TEXT_COPY" = "コピーが失敗しました\n\n権限がないか、そのフォルダ名はすでに（ラッパー内で）使用されています"; // by copy
+"FAILED_COPY_TO_WRAPPER_TEXT_MOVE" = "移動が失敗しました　\n\n権限がないか、そのフォルダ名はすでに（ラッパー内で）使用されています"; // by move
+
+//COPY/MOVE function was not Create Exe...
+"DIRECT_COPY_NOT_CREATE_EXE_OK"= "OK";
+"DIRECT_COPY_NOT_CREATE_EXE_TITLE" = "警告！";
+"DIRECT_COPY_NOT_CREATE_EXE_TEXT_COPY" = "コピーしたフォルダに実行できるプログラムがありませんでした";
+"DIRECT_COPY_NOT_CREATE_EXE_TEXT_MOVE" = "移動したフォルダに実行できるプログラムがありませんでした";
+
+
+/*
+ - (void)runATestRun
+ */
+
+//offer to show logs Alart
+"SHOW_TEST_LOG_VIEW" = "ログを表示";
+"SHOW_TEST_LOG_CANCEL" = "キャンセル";
+"SHOW_TEST_LOG_TITLE" = "テスト実行終了";
+"SHOW_TEST_LOG_TEXT" = "テスト実行のログを表示しますか？";
+
+
+/*
+ - (IBAction)killWineskinProcessesButtonPressed:(id)sender
+ */
+
+//kill process warning message Alart
+"KILL_WARNING_YES" = "はい";
+"KILL_WARNING_NO" = "いいえ";
+"KILL_WARNING_TITLE" = "プロセスを強制終了しますか？";
+"KILL_WARNING_TEXT" = "以下のプロセスが実行中ならば強制終了します...\n\nWineskinLauncher\nWineskinX11\n%@\n%@";
+
+
+/*
+ - (IBAction)windowsExeBrowseButtonPressed:(id)sender
+ */
+
+//Choose EXE file
+"EXE_BROWSE_TITLE" = "実行ファイルの選択（.exe .msi .bat 等）";
+"EXE_BROWSE_CHOOSE" = "選択";
+
+
+/*
+ - (IBAction)iconToUseBrowseButtonPressed:(id)sender
+ */
+
+//Choose icon file
+"ICON_BROWSE_TITLE" = "ラッパーのアイコンファイル（拡張子 .icns）を選択してください";
+"ICON_BROWSE_CHOOSE" = "選択";
+
+
+/*
+ - (IBAction)extMinusButtonPressed:(id)sender
+ */
+
+//remove the file association Alart
+"REMOVE_EXT_ASSOCIATION_OK" = "削除";
+"REMOVE_EXT_ASSOCIATION_CANCEL" = "キャンセル";
+"REMOVE_EXT_ASSOCIATION_TITLE" = "関連づけの削除";
+"REMOVE_EXT_ASSOCIATION_TEXT" = "関連づけを削除します。よろしいですか？";
+
+/*
+ - (IBAction)rebuildWrapperButtonPressed:(id)sender
+ */
+
+//Rebuild wrapper Alart
+"REBUILD_WRAPPER_YES" = "はい";
+"REBUILD_WRAPPER_NO" = "いいえ";
+"REBUILD_WRAPPER_TITLE" = "*** 注意！ ***";
+"REBUILD_WRAPPER_TEXT" = "ラッパー内を初期化します。（ラッパー内のdrive_cフォルダ、レジストリは再作成されます！）\n\nこの処理は取り消しできません\n\nよろしいですか？";
+
+
+/*
+ - (IBAction)winetricksUpdateButtonPressed:(id)sender
+ */
+
+//confirm update Winetricks Alart
+"UPDATE_WINETRICKS_OK" = "実行";
+"UPDATE_WINETRICKS_CANCEL" = "キャンセル";
+"UPDATE_WINETRICKS_TITLE" = "Winetricks更新の確認";
+"UPDATE_WINETRICKS_TEXT" = "最新バージョンのWinetricksに更新します\n\n最新バージョン取得...\n\t%@\nダウンロード後、ラッパーにインストールします");
+
+//Failed update Winetricks Alart
+"FAILED_UPDATE_WINETRICKS_OK", "OK";
+"FAILED_UPDATE_WINETRICKS_TITLE", "アップデート失敗";
+"FAILED_UPDATE_WINETRICKS_TEXT", "ダウンロードできませんでした";
+
+
+/*
+ - (IBAction)winetricksRunButtonPressed:(id)sender
+ */
+
+// Ask for confirmation before running winetricks Alart
+"CONFIRM_RUN_WINERICKS_OK" = "実行";
+"CONFIRM_RUN_WINERICKS_CANCEL" = "キャンセル";
+"CONFIRM_RUN_WINERICKS_TITLE" = "Winetricksを実行しますか？";
+"CONFIRM_RUN_WINERICKS_TEXT" = "以下のように実行されます\nwinetricks %@";
+
+
+/*
+ - (IBAction)winetricksCancelButtonPressed:(id)sender
+ */
+
+//confirm to kill with big warning window
+"CANCEL_WINETRICKS_OK" = "はい";
+"CANCEL_WINETRICKS_CANCEL" = "いいえ"; //cancel the cancel.
+"CANCEL_WINETRICKS_TITLE" = "Winetricksの中止";
+"CANCEL_WINETRICKS_TEXT" = "Winetricksを中止してもよろしいですか？\n\n実行中のWinetricksプロセスを強制終了しますが、手動で停止するまでシェルのプロセスが残ってしまうかもしれません\n\nまた、ラッパーが壊れる可能性があります（ラッパーが壊れた場合、ラッパーの再ビルドが必要です）";
+
+
+/*
+ - (void)winetricksWriteFinished
+ */
+
+//Run Winetricks finish text (for output area)
+"WINETRICKS_FINISH_TEXT_INTERRUPTED" = "\n\n Winetricksは中止されました！\nラッパーが壊れている可能性があります。または、他のシェルのプロセスに影響しているかもしれません。\n\nWinetricksの強制終了は推奨されていません。ラッパーのリフレッシュ、最悪の場合はリビルドが必要かもしれません\n\n";
+"WINETRICKS_FINISH_TEXT_COMPLEATE" = "\n\n Winetricksが終了しました\n\n";
+
+
+/*
+ - (IBAction)cEXESaveButtonPressed:(id)sender
+ */
+
+//cEXE name is blank Alart
+"CEXE_NAME_BLANK_OK" = "OK";
+"CEXE_NAME_BLANK_TITLE" = "失敗";
+"CEXE_NAME_BLANK_TEXT" = "名前の欄を入力してください";
+
+//You must choose an executable to run! Alart
+"CEXE_FILE_BLANK_OK" = "OK";
+"CEXE_FILE_BLANK_TITLE" = "失敗";
+"CEXE_FILE_BLANK_TEXT" = "実行ファイルを選択してください";
+
+//make sure file doesn't exist Alart
+"CEXE_NAME_ALREADY_EXIST_OK" = "OK";
+"CEXE_NAME_ALREADY_EXIST_TITLE" = "失敗（すでにファイルが存在）";
+"CEXE_NAME_ALREADY_EXIST_TEXT" = "その名前はすでに使用されています。別の名前を入力してください";
+
+//Create cEXE finished Alart
+"CEXE_CREATED_OK" = "OK";
+"CEXE_CREATED_TITLE" = "実行しました！";
+"CEXE_CREATED_TEXT" = "カスタムExeを作成しました（作成したファイルはラッパー内のWineskin.appと同じ場所にあります）\n\nappの外から使用しやすいようにしたいときはFinderでエイリアスを作ってください";
+
+
+/*
+ - (IBAction)cEXEIconBrowseButtonPressed:(id)sender
+ */
+
+//Browse cEXE icon
+"CEXE_ICON_BROWSE_TITLE" = "カスタムExeのアイコン（拡張子 .icns）を選択";
+"CEXE_ICON_BROWSE_CHOOSE" = "選択";
+
+
+/*
+ - (IBAction)changeEngineUsedOkButtonPressed:(id)sender
+ */
+
+//Archiver not foned... Alart
+"ARCHIVER_NOT_FOND_OK" = "OK";
+"ARCHIVER_NOT_FOND_TITLE" = "失敗！";
+"ARCHIVER_NOT_FOND_TEXT" = "処理に失敗しました... 必要なファイルが欠けていました。エンジンを再インストールするか、Wineskin Wineryを起動してみてください";
+
+
+/*
+ - (IBAction)updateWrapperButtonPressed:(id)sender
+ */
+
+//Update WRAPPER error Alart
+"UPDATE_WRAPPER_ERROR_OK" = "OK";
+"UPDATE_WRAPPER_ERROR_TITLE" = "失敗！";
+"UPDATE_WRAPPER_ERROR_TEXT" = "コピー元のラッパーがありませんでした。Wineskin Wineryでラッパーの更新をしてください";
+
+//if master wrapper and current wrapper have same versions, prompt its already updated
+"UPDATE_WRAPPER_LATEST_NO" = "いいえ";
+"UPDATE_WRAPPER_LATEST_YES" = "更新！";
+"UPDATE_WRAPPER_LATEST_TITLE" = "更新する必要はありません";
+"UPDATE_WRAPPER_LATEST_TEXT" = "ラッパーは最新バージョンです。更新は必要ありませんが、強制的に更新処理を行いますか？";
+
+//confirm wrapper change Alart
+"UPDATE_WRAPPER_CONFIRM_OK" = "OK";
+"UPDATE_WRAPPER_CONFIRM_CANCEL" = "キャンセル";
+"UPDATE_WRAPPER_CONFIRM_TITLE" = "ラッパー更新の確認";
+"UPDATE_WRAPPER_CONFIRM_TEXT" = "ラッパーを更新してもよろしいですか？\nWineskin Wineryが取得した最新のラッパーに更新されます。\n\nラッパー内の以下のファイルが更新されます:\nWineskin.app\nContents/MacOS\nContents/Frameworks\nContents/Resources/English.lproj/MainMenu.nib\nContents/Resources/en.lproj/main.nib";
+
+//Update wrapper detect ICE engine
+"UPDATE_WRAPPER_DETECT_ICE_OK" = "OK";
+"UPDATE_WRAPPER_DETECT_ICE_TITLE" = "警告";
+"UPDATE_WRAPPER_DETECT_ICE_TEXT" = "ICEエンジン検知。エンジンは変換されませんでした。WS8以上のバージョンのエンジンを選択してください (Wineskin.appのエンジンを変更してください)";
+
+
+/*
+ - (IBAction)extSaveButtonPressed:(id)sender
+ */
+
+//Extensions name is blank Alart
+"EXT_BLANK_OK" = "OK";
+"EXT_BLANK_TITLE" = "失敗";
+"EXT_BLANK_TEXT" = "拡張子名が入力されていません";
+
+
+/*
+ - (IBAction)modifyMappingsMyDocumentsBrowseButtonPressed:(id)sender
+ */
+
+//Choose Folder mapping My Documents
+"FOLDER_MAP_CHOOSE_MYDOCUMENTS_TITLE" = "マイドキュメント(My Documents)フォルダにマッピングするフォルダを選択してください";
+"FOLDER_MAP_CHOOSE_MYDOCUMENTS_CHOOSE" = "選択";
+
+
+/*
+ - (IBAction)modifyMappingsMyDesktopBrowseButtonPressed:(id)sender
+ */
+
+//Choose Folder mapping My Desktop
+"FOLDER_MAP_CHOOSE_MYDESKTOP_TITLE" = "デスクトップ(Desktop)フォルダにマッピングするフォルダを選択してください";
+"FOLDER_MAP_CHOOSE_MYDESKTOP_CHOOSE" = "選択";
+
+
+/*
+ - (IBAction)modifyMappingsMyVideosBrowseButtonPressed:(id)sender
+ */
+
+//Choose Folder mapping My Videos
+"FOLDER_MAP_CHOOSE_MYVIDEOS_TITLE" = "マイビデオ(My Videos)フォルダにマッピングするフォルダを選択してください";
+"FOLDER_MAP_CHOOSE_MYVIDEOS_CHOOSE" = "選択";
+
+
+/*
+ - (IBAction)modifyMappingsMyMusicBrowseButtonPressed:(id)sender
+*/
+
+//Choose Folder mapping My Music
+"FOLDER_MAP_CHOOSE_MYMUSIC_TITLE" = "マイミュージック(My Music)フォルダにマッピングするフォルダを選択してください";
+"FOLDER_MAP_CHOOSE_MYMUSIC_CHOOSE" = "選択";
+
+
+/*
+ - (IBAction)modifyMappingsMyPicturesBrowseButtonPressed:(id)sender
+ */
+
+//Choose Folder mapping My Pictures
+"FOLDER_MAP_CHOOSE_MYPICTURES_TITLE" = "マイピクチャ(My Pictures)フォルダにマッピングするフォルダを選択してください";
+"FOLDER_MAP_CHOOSE_MYPICTURES_CHOOSE" = "選択";
+
+
+
+
+
+
