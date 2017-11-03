@@ -145,6 +145,7 @@ static NSInteger localizedComparator(id a, id b, void* context)
 	[filemgr createDirectoryAtPath:[NSHomeDirectory() stringByAppendingString:@"/Library/Application Support/Wineskin/Engines"] withIntermediateDirectories:YES attributes:nil error:nil];
 #ifdef WINESKINE_JAPANESE
     [filemgr createDirectoryAtPath:[NSHomeDirectory() stringByAppendingString:@"/Library/Application Support/Wineskin/Wrapper-JP"] withIntermediateDirectories:YES attributes:nil error:nil];
+    
 #else
 	[filemgr createDirectoryAtPath:[NSHomeDirectory() stringByAppendingString:@"/Library/Application Support/Wineskin/Wrapper"] withIntermediateDirectories:YES attributes:nil error:nil];
 #endif
@@ -442,6 +443,7 @@ static NSInteger localizedComparator(id a, id b, void* context)
 {
 #ifdef WINESKINE_JAPANESE
     NSString *folder = [NSString stringWithFormat:@"%@/Library/Application Support/Wineskin/Wrapper-JP",NSHomeDirectory()];
+    
 #else
 	NSString *folder = [NSString stringWithFormat:@"%@/Library/Application Support/Wineskin/Wrapper",NSHomeDirectory()];
 #endif

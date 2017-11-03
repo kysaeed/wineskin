@@ -1,4 +1,9 @@
 REGEDIT4
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\Locale]
+"Default"=dword:00000411
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\Language]
+"Default"=dword:00000411
 
 [HKEY_CURRENT_USER\Control Panel\Colors]
 "ActiveBorder"="212 212 212"
@@ -160,3 +165,32 @@ REGEDIT4
 "Start Menu"=str(2):"%USERPROFILE%\\Start Menu"
 "StartUp"=str(2):"%USERPROFILE%\\Start Menu\\Programs\\StartUp"
 "Templates"=str(2):"%USERPROFILE%\\Templates"
+
+
+[HKEY_CURRENT_USER\Software\Wine\Fonts\Replacements]
+"Courier New"="Courier New"
+"Comic Sans MS"="Comic Sans MS"
+"FixedSys"="Osaka"
+"Lucida Sans Unicode"="Lucida Grande"
+"ＭＳ Ｐゴシック"="ヒラギノ角ゴシック"
+"MS PGothic"="Osaka"
+"ＭＳ Ｐ明朝"="ヒラギノ明朝 ProN"
+"MS UI Gothic"="ヒラギノ角ゴシック"
+"ＭＳ ゴシック"="Osaka"
+"MS Gothic"="Osaka"
+"ＭＳ 明朝"="ヒラギノ明朝 ProN"
+"Small fonts"="Osaka"
+"System"="Osaka"
+"Terminal"="ヒラギノ角ゴシック"
+"Verdana"="ヒラギノ角ゴシック"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes]
+"Courier New"="Courier New"
+"Comic Sans MS"="Comic Sans MS"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink]
+"Tahoma"="Osaka"
+
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"FontSmoothing"="2"

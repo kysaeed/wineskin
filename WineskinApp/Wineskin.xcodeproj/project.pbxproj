@@ -40,7 +40,6 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Wineskin-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Wineskin-Info.plist"; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* Wineskin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wineskin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A82645D4153ADC3D00FA0306 /* WineskinBanner2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WineskinBanner2.jpg; sourceTree = "<group>"; };
 		A84DB68A153230490071D4F8 /* Command Line Wine Test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Command Line Wine Test"; sourceTree = "<group>"; };
 		A868FC2512820212001EBA25 /* WSGamma */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = WSGamma; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		A868FC2E12820240001EBA25 /* CustomEXE.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = CustomEXE.app; sourceTree = "<group>"; };
 		A88CCE4C127B9C02007FBC32 /* WineskinBanner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WineskinBanner.jpg; sourceTree = "<group>"; };
 		A88CCE4E127B9CED007FBC32 /* Wineskin.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Wineskin.icns; sourceTree = "<group>"; };
+		C95EB0241FAAF94300EADF4D /* Wineskin-JP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wineskin-JP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98B25B31FA5910100FAD1BD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C98B25B41FA5910100FAD1BD /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		C9D9C4FA1FA591ED00FAE048 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -95,14 +95,6 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		19C28FACFE9D520D11CA2CBB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8D1107320486CEB800E47090 /* Wineskin.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		29B97314FDCFA39411CA2CEA /* Wineskin */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +102,7 @@
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
-				19C28FACFE9D520D11CA2CBB /* Products */,
+				C95EB0251FAAF94300EADF4D /* Products */,
 			);
 			name = Wineskin;
 			sourceTree = "<group>";
@@ -163,6 +155,14 @@
 			path = Winetricks;
 			sourceTree = "<group>";
 		};
+		C95EB0251FAAF94300EADF4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C95EB0241FAAF94300EADF4D /* Wineskin-JP.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,7 +181,7 @@
 			name = Wineskin;
 			productInstallPath = "$(HOME)/Applications";
 			productName = Wineskin;
-			productReference = 8D1107320486CEB800E47090 /* Wineskin.app */;
+			productReference = C95EB0241FAAF94300EADF4D /* Wineskin-JP.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -194,6 +194,7 @@
 				TargetAttributes = {
 					8D1107260486CEB800E47090 = {
 						DevelopmentTeam = 6V9ZE5XK8D;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -209,6 +210,7 @@
 				ja,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Wineskin */;
+			productRefGroup = C95EB0251FAAF94300EADF4D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -290,7 +292,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 6V9ZE5XK8D;
@@ -311,8 +314,10 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx10.6][arch=i386]" = 10.6;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = Wineskin;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kysaeed.wineskin-jp";
+				PRODUCT_NAME = "Wineskin-JP";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -322,7 +327,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 6V9ZE5XK8D;
@@ -339,8 +345,10 @@
 				INFOPLIST_FILE = "Wineskin-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = Wineskin;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kysaeed.wineskin-jp";
+				PRODUCT_NAME = "Wineskin-JP";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
