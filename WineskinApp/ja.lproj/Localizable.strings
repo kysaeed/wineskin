@@ -12,8 +12,8 @@
  */
 
 //choose the installer
-"CHOOSE_INSTLLLER_TITLE" = "実行するインストーラーを選択";
-"CHOOSE_INSTLLLER_PROMPT" = "選択";
+"CHOOSE_INSTALLER_TITLE" = "実行するインストーラーを選択";
+"CHOOSE_INSTALLER_PROMPT" = "選択";
 
 //Installer was not Create Exe...
 "INSTALLER_NOT_CREATE_EXE_OK" = "OK";
@@ -112,12 +112,12 @@
 "UPDATE_WINETRICKS_OK" = "実行";
 "UPDATE_WINETRICKS_CANCEL" = "キャンセル";
 "UPDATE_WINETRICKS_TITLE" = "Winetricks更新の確認";
-"UPDATE_WINETRICKS_TEXT" = "最新バージョンのWinetricksに更新します\n\n最新バージョン取得...\n\t%@\nダウンロード後、ラッパーにインストールします");
+"UPDATE_WINETRICKS_TEXT" = "最新バージョンのWinetricksに更新します\n\n最新バージョン取得...\n\t%@\nダウンロード後、ラッパーにインストールします";
 
 //Failed update Winetricks Alart
-"FAILED_UPDATE_WINETRICKS_OK", "OK";
-"FAILED_UPDATE_WINETRICKS_TITLE", "アップデート失敗";
-"FAILED_UPDATE_WINETRICKS_TEXT", "ダウンロードできませんでした";
+"FAILED_UPDATE_WINETRICKS_OK" = "OK";
+"FAILED_UPDATE_WINETRICKS_TITLE" = "アップデート失敗";
+"FAILED_UPDATE_WINETRICKS_TEXT" = "ダウンロードできませんでした";
 
 
 /*

@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		162AD88C1434CE2800FC0426 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 162AD88B1434CE2800FC0426 /* Defaults.plist */; };
 		16987CF3142873C2003AFFFF /* winetricksHelpList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16987CF2142873C2003AFFFF /* winetricksHelpList.plist */; };
-		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* WineskinAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* WineskinAppDelegate.m */; };
-		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		A82645D5153ADC3D00FA0306 /* WineskinBanner2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A82645D4153ADC3D00FA0306 /* WineskinBanner2.jpg */; };
@@ -23,16 +21,15 @@
 		A82E5B95133E740C007AA611 /* Wineskin.icns in Resources */ = {isa = PBXBuildFile; fileRef = A88CCE4E127B9CED007FBC32 /* Wineskin.icns */; };
 		A82E5B96133E7411007AA611 /* WineskinBanner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A88CCE4C127B9C02007FBC32 /* WineskinBanner.jpg */; };
 		A84DB68B153230490071D4F8 /* Command Line Wine Test in Resources */ = {isa = PBXBuildFile; fileRef = A84DB68A153230490071D4F8 /* Command Line Wine Test */; };
-		C9D9C4FB1FA591ED00FAE048 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9D9C4F91FA591ED00FAE048 /* Localizable.strings */; };
+		C902253A1FADB734002DB861 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C902253C1FADB734002DB861 /* MainMenu.xib */; };
+		C90225401FADB750002DB861 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C902253E1FADB750002DB861 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		162AD88B1434CE2800FC0426 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		16987CF2142873C2003AFFFF /* winetricksHelpList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = winetricksHelpList.plist; sourceTree = "<group>"; };
-		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		256AC3D80F4B6AC300CF3369 /* WineskinAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WineskinAppDelegate.h; sourceTree = "<group>"; };
 		256AC3D90F4B6AC300CF3369 /* WineskinAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WineskinAppDelegate.m; sourceTree = "<group>"; };
 		256AC3F00F4B6AF500CF3369 /* Wineskin_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wineskin_Prefix.pch; sourceTree = "<group>"; };
@@ -49,11 +46,11 @@
 		A868FC2E12820240001EBA25 /* CustomEXE.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = CustomEXE.app; sourceTree = "<group>"; };
 		A88CCE4C127B9C02007FBC32 /* WineskinBanner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WineskinBanner.jpg; sourceTree = "<group>"; };
 		A88CCE4E127B9CED007FBC32 /* Wineskin.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Wineskin.icns; sourceTree = "<group>"; };
+		C902253B1FADB734002DB861 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C902253D1FADB737002DB861 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C902253F1FADB750002DB861 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C90225411FADB753002DB861 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C95EB0241FAAF94300EADF4D /* Wineskin-JP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wineskin-JP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C98B25B31FA5910100FAD1BD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C98B25B41FA5910100FAD1BD /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		C9D9C4FA1FA591ED00FAE048 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C9D9C4FC1FA591F800FAE048 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +116,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C9D9C4F91FA591ED00FAE048 /* Localizable.strings */,
+				C902253E1FADB750002DB861 /* Localizable.strings */,
+				C902253C1FADB734002DB861 /* MainMenu.xib */,
 				A82645D4153ADC3D00FA0306 /* WineskinBanner2.jpg */,
 				A84DB68A153230490071D4F8 /* Command Line Wine Test */,
 				A868FC2E12820240001EBA25 /* CustomEXE.app */,
@@ -129,8 +127,6 @@
 				A88CCE4E127B9CED007FBC32 /* Wineskin.icns */,
 				A88CCE4C127B9C02007FBC32 /* WineskinBanner.jpg */,
 				8D1107310486CEB800E47090 /* Wineskin-Info.plist */,
-				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 				162AD88B1434CE2800FC0426 /* Defaults.plist */,
 			);
 			name = Resources;
@@ -205,9 +201,8 @@
 			knownRegions = (
 				English,
 				Japanese,
-				French,
-				German,
 				ja,
+				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Wineskin */;
 			productRefGroup = C95EB0251FAAF94300EADF4D /* Products */;
@@ -224,10 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				A82E5B96133E7411007AA611 /* WineskinBanner.jpg in Resources */,
-				C9D9C4FB1FA591ED00FAE048 /* Localizable.strings in Resources */,
 				A82E5B95133E740C007AA611 /* Wineskin.icns in Resources */,
 				A82E5B94133E7407007AA611 /* WSGamma in Resources */,
 				A82E5B92133E73FB007AA611 /* cabextract in Resources */,
@@ -236,8 +228,10 @@
 				A82E5B8C133E73B8007AA611 /* CustomEXE.app in Resources */,
 				16987CF3142873C2003AFFFF /* winetricksHelpList.plist in Resources */,
 				162AD88C1434CE2800FC0426 /* Defaults.plist in Resources */,
+				C90225401FADB750002DB861 /* Localizable.strings in Resources */,
 				A84DB68B153230490071D4F8 /* Command Line Wine Test in Resources */,
 				A82645D5153ADC3D00FA0306 /* WineskinBanner2.jpg in Resources */,
+				C902253A1FADB734002DB861 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,29 +250,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+		C902253C1FADB734002DB861 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				089C165DFE840E0CC02AAC07 /* English */,
-				C98B25B31FA5910100FAD1BD /* ja */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1DDD58150DA1D0A300B32029 /* English */,
-				C98B25B41FA5910100FAD1BD /* ja */,
+				C902253B1FADB734002DB861 /* en */,
+				C902253D1FADB737002DB861 /* ja */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		C9D9C4F91FA591ED00FAE048 /* Localizable.strings */ = {
+		C902253E1FADB750002DB861 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C9D9C4FA1FA591ED00FAE048 /* English */,
-				C9D9C4FC1FA591F800FAE048 /* ja */,
+				C902253F1FADB750002DB861 /* en */,
+				C90225411FADB753002DB861 /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

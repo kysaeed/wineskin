@@ -1,0 +1,283 @@
+/* 
+  Localizable.strings
+  Wineskin
+
+  Created by kysaeed on 2017/02/06.
+
+*/
+
+
+/*
+ - (IBAction)chooseSetupExecutableButtonPressed:(id)sender
+ */
+
+//choose the installer
+"CHOOSE_INSTALLER_TITLE" = "Please choose the install program";
+"CHOOSE_INSTALLER_PROMPT" = "Choose";
+
+//Installer was not Create Exe...
+"INSTALLER_NOT_CREATE_EXE_OK" = "OK";
+"INSTALLER_NOT_CREATE_EXE_TITLE" = "Oops!";
+"INSTALLER_NOT_CREATE_EXE_TEXT" = "No new executables found!\n\nMaybe the installer failed...?\n\nIf you tried to install somewhere other than C: drive (drive_c in the wrapper) then you will get this message too.  All software must be installed in C: drive.";
+
+
+/*
+ - (void)copyMoveFolder:(NSString *)command
+ */
+
+//Direct copy exe to inside wrapper. choose
+"COPY_TO_WRAPPER_TITLE_COPY" = "Please choose the Folder to COPY in"; // by copy
+"COPY_TO_WRAPPER_TITLE_MOVE" = "Please choose the Folder to MOVE in"; // by move
+"COPY_TO_WRAPPER_PROMPT" = "Choose";
+
+//FAILED Direct copy exe to inside wrapper Alart
+"FAILED_COPY_TO_WRAPPER_OK" = "OK";
+"FAILED_COPY_TO_WRAPPER_TITLE" = "Oops!";
+"FAILED_COPY_TO_WRAPPER_TEXT_COPY" = "The copy failed.\n\nYou either do not have permission to copy, or there is already a folder with that name in the wrapper's Program Files folder"; // by copy
+"FAILED_COPY_TO_WRAPPER_TEXT_MOVE" = "The move failed.\n\nYou either do not have permission to move, or there is already a folder with that name in the wrapper's Program Files folder"; // by move
+
+//COPY/MOVE function was not Create Exe...
+"DIRECT_COPY_NOT_CREATE_EXE_OK"= "OK";
+"DIRECT_COPY_NOT_CREATE_EXE_TITLE" = "Oops!";
+"DIRECT_COPY_NOT_CREATE_EXE_TEXT_COPY" = "No new executables found after copying the selected folder inside the wrapper!";
+"DIRECT_COPY_NOT_CREATE_EXE_TEXT_MOVE" = "No new executables found after moving the selected folder inside the wrapper!";
+
+
+/*
+ - (void)runATestRun
+ */
+
+//offer to show logs Alart
+"SHOW_TEST_LOG_VIEW" = "View";
+"SHOW_TEST_LOG_CANCEL" = "Cancel";
+"SHOW_TEST_LOG_TITLE" = "Test Run Complete!";
+"SHOW_TEST_LOG_TEXT" = "Do you wish to view the Test Run Logs?";
+
+
+/*
+ - (IBAction)killWineskinProcessesButtonPressed:(id)sender
+ */
+
+//kill process warning message Alart
+"KILL_WARNING_YES" = "Yes";
+"KILL_WARNING_NO" = "No";
+"KILL_WARNING_TITLE" = "Kill Processes, Are you Sure?";
+"KILL_WARNING_TEXT" = "This will kill the following processes (if running) from this wrapper...\n\nWineskinLauncher\nWineskinX11\n%@\n%@";
+
+
+/*
+ - (IBAction)windowsExeBrowseButtonPressed:(id)sender
+ */
+
+//Choose EXE file
+"EXE_BROWSE_TITLE" = "Please choose the .exe, .msi, or .bat file that should run";
+"EXE_BROWSE_CHOOSE" = "Choose";
+
+
+/*
+ - (IBAction)iconToUseBrowseButtonPressed:(id)sender
+ */
+
+//Choose icon file
+"ICON_BROWSE_TITLE" = "Please choose the .icns file to use in the wrapper";
+"ICON_BROWSE_CHOOSE" = "Choose";
+
+
+/*
+ - (IBAction)extMinusButtonPressed:(id)sender
+ */
+
+//remove the file association Alart
+"REMOVE_EXT_ASSOCIATION_OK" = "OK";
+"REMOVE_EXT_ASSOCIATION_CANCEL" = "Cancel";
+"REMOVE_EXT_ASSOCIATION_TITLE" = "Remove entry?";
+"REMOVE_EXT_ASSOCIATION_TEXT" = "This will remove the file association, are you sure?";
+
+/*
+ - (IBAction)rebuildWrapperButtonPressed:(id)sender
+ */
+
+//Rebuild wrapper Alart
+"REBUILD_WRAPPER_YES" = "Yes";
+"REBUILD_WRAPPER_NO" = "No";
+"REBUILD_WRAPPER_TITLE" = "***WARNING!!!!***";
+"REBUILD_WRAPPER_TEXT" = "This will remove all contents, including anything installed in drive_c, and registry files, and rebuild them from scratch!  You will lose anything you have installed in the wrapper!\n\nThis data is NOT recoverable!!\n\nAre you sure you want to do this?";
+
+
+/*
+ - (IBAction)winetricksUpdateButtonPressed:(id)sender
+ */
+
+//confirm update Winetricks Alart
+"UPDATE_WINETRICKS_OK" = "OK";
+"UPDATE_WINETRICKS_CANCEL" = "Cancel";
+"UPDATE_WINETRICKS_TITLE" = "Please confirm...";
+"UPDATE_WINETRICKS_TEXT" = "Are you sure you want to update to the latest version of Winetricks?\n\nThe latest version from...\n\t%@\nwill be downloaded and installed for this wrapper.";
+
+//Failed update Winetricks Alart
+"FAILED_UPDATE_WINETRICKS_OK" = "OK";
+"FAILED_UPDATE_WINETRICKS_TITLE" = "Cannot Update!!";
+"FAILED_UPDATE_WINETRICKS_TEXT" = "Connection to the website failed.  The site is either down currently, or there is a problem with your internet connection.";
+
+
+/*
+ - (IBAction)winetricksRunButtonPressed:(id)sender
+ */
+
+// Ask for confirmation before running winetricks Alart
+"CONFIRM_RUN_WINERICKS_OK" = "Run";
+"CONFIRM_RUN_WINERICKS_CANCEL" = "Cancel";
+"CONFIRM_RUN_WINERICKS_TITLE" = "Do you wish to run winetricks?";
+"CONFIRM_RUN_WINERICKS_TEXT" = "The following command will be executed:\nwinetricks %@";
+
+
+/*
+ - (IBAction)winetricksCancelButtonPressed:(id)sender
+ */
+
+//confirm to kill with big warning window
+"CANCEL_WINETRICKS_OK" = "Yes, do the cancel";
+"CANCEL_WINETRICKS_CANCEL" = "I changed my mind..."; //cancel the cancel.
+"CANCEL_WINETRICKS_TITLE" = "Are You Sure?";
+"CANCEL_WINETRICKS_TEXT" = "Are you sure you want to cancel Winetricks?\n\nThis will kill the running Winetricks process, but has a chance to accidently leave \"sh\" processes running until you manually end them or reboot\n\nIt could also mess up the wrapper where you may need to do a full rebuild to get it working right again (this will not usually be a problem).";
+
+
+/*
+ - (void)winetricksWriteFinished
+ */
+
+//Run Winetricks finish text (for output area)
+"WINETRICKS_FINISH_TEXT_INTERRUPTED" = "\n\n Winetricks CANCELED!!\nIt is possible that there are now problems with the wrapper, or other shell processes may have accidently been affected as well.  Usually its best to not cancel Winetricks, but in many cases it will not hurt.  You may need to refresh the wrapper, or in bad cases do a rebuild.\n\n";
+"WINETRICKS_FINISH_TEXT_COMPLEATE" = "\n\n Winetricks Commands Finished!!\n\n";
+
+
+/*
+ - (IBAction)cEXESaveButtonPressed:(id)sender
+ */
+
+//cEXE name is blank Alart
+"CEXE_NAME_BLANK_OK" = "OK";
+"CEXE_NAME_BLANK_TITLE" = "Oops!";
+"CEXE_NAME_BLANK_TEXT" = "You must type in a name to use!";
+
+//You must choose an executable to run! Alart
+"CEXE_FILE_BLANK_OK" = "OK";
+"CEXE_FILE_BLANK_TITLE" = "Oops!";
+"CEXE_FILE_BLANK_TEXT" = "You must choose an executable to run!";
+
+//make sure file doesn't exist Alart
+"CEXE_NAME_ALREADY_EXIST_OK" = "OK";
+"CEXE_NAME_ALREADY_EXIST_TITLE" = "Oops! File already exists!";
+"CEXE_NAME_ALREADY_EXIST_TEXT" = "That name is already in use, please choose a different name.";
+
+//Create cEXE finished Alart
+"CEXE_CREATED_OK" = "OK";
+"CEXE_CREATED_TITLE" = "Done!";
+"CEXE_CREATED_TEXT" = "The Custom Exe Launcher has been made and can be found just inside the wrapper along with Wineskin.app.\n\nIf you want to be able to access it from outside of the app, just make and use an alias to it.";
+
+
+/*
+ - (IBAction)cEXEIconBrowseButtonPressed:(id)sender
+ */
+
+//Browse cEXE icon
+"CEXE_ICON_BROWSE_TITLE" = "Please choose the .icns file to use in the wrapper";
+"CEXE_ICON_BROWSE_CHOOSE" = "Choose";
+
+
+/*
+ - (IBAction)changeEngineUsedOkButtonPressed:(id)sender
+ */
+
+//Archiver not foned... Alart
+"ARCHIVER_NOT_FOND_OK" = "OK";
+"ARCHIVER_NOT_FOND_TITLE" = "ERROR!";
+"ARCHIVER_NOT_FOND_TEXT" = "Cannot continue... files missing.  Please try reinstalling an engine manually, or running Wineskin Winery.  Either should attempt to fix the problem.";
+
+
+/*
+ - (IBAction)updateWrapperButtonPressed:(id)sender
+ */
+
+//Update WRAPPER error Alart
+"UPDATE_WRAPPER_ERROR_OK" = "OK";
+"UPDATE_WRAPPER_ERROR_TITLE" = "Oops!";
+"UPDATE_WRAPPER_ERROR_TEXT" = "There is an error with the installation of your Master Wrapper.  Please update your Wrapper in Wineskin Winery (a manual install of a wrapper for Wineskin Winery will work too)";
+
+//if master wrapper and current wrapper have same versions, prompt its already updated
+"UPDATE_WRAPPER_LATEST_NO" = "Do Not Update";
+"UPDATE_WRAPPER_LATEST_YES" = "Update";
+"UPDATE_WRAPPER_LATEST_TITLE" = "No update needed";
+"UPDATE_WRAPPER_LATEST_TEXT" = "Your wrapper version matches the master wrapper version... no update needed.  Do you want to force an update?";
+
+//confirm wrapper change Alart
+"UPDATE_WRAPPER_CONFIRM_OK" = "OK";
+"UPDATE_WRAPPER_CONFIRM_CANCEL" = "Cancel";
+"UPDATE_WRAPPER_CONFIRM_TITLE" = "Please confirm...";
+"UPDATE_WRAPPER_CONFIRM_TEXT" = "Are you sure you want to do this update?  It will change out the wrappers main Wineskin files with newer copies from whatever Master Wrapper you have installed with Wineskin Winery.  The following files/folders will be replaced in the wrapper:\nWineskin.app\nContents/MacOS\nContents/Frameworks\nContents/Resources/English.lproj/MainMenu.nib\nContents/Resources/English.lproj/main.nib";
+
+//Update wrapper detect ICE engine
+"UPDATE_WRAPPER_DETECT_ICE_OK" = "OK";
+"UPDATE_WRAPPER_DETECT_ICE_TITLE" = "Warning";
+"UPDATE_WRAPPER_DETECT_ICE_TEXT" = "Warning, ICE engine detected.  Engine will not be converted, you must choose a new WS8+ engine manually later (Change Engine in Wineskin.app)";
+
+
+/*
+ - (IBAction)extSaveButtonPressed:(id)sender
+ */
+
+//Extensions name is blank Alart
+"EXT_BLANK_OK" = "Oops!";
+"EXT_BLANK_TITLE" = "Error";
+"EXT_BLANK_TEXT" = "You left an entry field blank...";
+
+
+/*
+ - (IBAction)modifyMappingsMyDocumentsBrowseButtonPressed:(id)sender
+ */
+
+//Choose Folder mapping My Documents
+"FOLDER_MAP_CHOOSE_MYDOCUMENTS_TITLE" = "Please choose the Folder \"My Documents\" should map to";
+"FOLDER_MAP_CHOOSE_MYDOCUMENTS_CHOOSE" = "Choose";
+
+
+/*
+ - (IBAction)modifyMappingsMyDesktopBrowseButtonPressed:(id)sender
+ */
+
+//Choose Folder mapping My Desktop
+"FOLDER_MAP_CHOOSE_MYDESKTOP_TITLE" = "Please choose the Folder \"Desktop\" should map to";
+"FOLDER_MAP_CHOOSE_MYDESKTOP_CHOOSE" = "Choose";
+
+
+/*
+ - (IBAction)modifyMappingsMyVideosBrowseButtonPressed:(id)sender
+ */
+
+//Choose Folder mapping My Videos
+"FOLDER_MAP_CHOOSE_MYVIDEOS_TITLE" = "Please choose the Folder \"My Videos\" should map to";
+"FOLDER_MAP_CHOOSE_MYVIDEOS_CHOOSE" = "Choose";
+
+
+/*
+ - (IBAction)modifyMappingsMyMusicBrowseButtonPressed:(id)sender
+*/
+
+//Choose Folder mapping My Music
+"FOLDER_MAP_CHOOSE_MYMUSIC_TITLE" = "Please choose the Folder \"My Music\" should map to";
+"FOLDER_MAP_CHOOSE_MYMUSIC_CHOOSE" = "Choose";
+
+
+/*
+ - (IBAction)modifyMappingsMyPicturesBrowseButtonPressed:(id)sender
+ */
+
+//Choose Folder mapping My Pictures
+"FOLDER_MAP_CHOOSE_MYPICTURES_TITLE" = "Please choose the Folder \"My Pictures\" should map to";
+"FOLDER_MAP_CHOOSE_MYPICTURES_CHOOSE" = "Choose";
+
+
+
+
+
+

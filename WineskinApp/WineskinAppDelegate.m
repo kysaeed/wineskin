@@ -214,8 +214,8 @@ NSFileManager *fm;
 	// have user choose install program
 	//NSOpenPanel *panel = [NSOpenPanel openPanel];
 	NSOpenPanel *panel = [[NSOpenPanel alloc] init];
-	[panel setTitle:NSLocalizedString(@"CHOOSE_INSTLLLER_TITLE", @"Please choose the install program")];
-	[panel setPrompt:NSLocalizedString(@"CHOOSE_INSTLLLER_PROMPT", @"Choose")];
+	[panel setTitle:NSLocalizedString(@"CHOOSE_INSTALLER_TITLE", @"Please choose the install program")];
+	[panel setPrompt:NSLocalizedString(@"CHOOSE_INSTALLER_PROMPT", @"Choose")];
 	[panel setCanChooseDirectories:NO];
 	[panel setCanChooseFiles:YES];
 	[panel setAllowsMultipleSelection:NO];
@@ -261,7 +261,7 @@ NSFileManager *fm;
 	if ([finalList count] == 0)
 	{
 		NSAlert *alert = [[NSAlert alloc] init];
-		[alert addButtonWithTitle:NSLocalizedString(@"INSTALLER_NOT_CREATE_EXE_", @"OK")];
+		[alert addButtonWithTitle:NSLocalizedString(@"INSTALLER_NOT_CREATE_EXE_OK", @"OK")];
 		[alert setMessageText:NSLocalizedString(@"INSTALLER_NOT_CREATE_EXE_TITLE", @"Oops!")];
 		[alert setInformativeText:NSLocalizedString(@"INSTALLER_NOT_CREATE_EXE_TEXT", @"No new executables found!\n\nMaybe the installer failed...?\n\nIf you tried to install somewhere other than C: drive (drive_c in the wrapper) then you will get this message too.  All software must be installed in C: drive.")];
 		[alert setAlertStyle:NSInformationalAlertStyle];
@@ -307,7 +307,9 @@ NSFileManager *fm;
 		[panel setTitle:NSLocalizedString(@"COPY_TO_WRAPPER_TITLE_COPY", @"Please choose the Folder to COPY in")];
 	else
 		[panel setTitle:NSLocalizedString(@"COPY_TO_WRAPPER_TITLE_MOVE", @"Please choose the Folder to MOVE in")];
-	[panel setPrompt:NSLocalizedString(@"COPY_TO_WRAPPER_PROMPT", @"Choose")];
+    [panel setPrompt:NSLocalizedString(@"COPY_TO_WRAPPER_PROMPT", @"Choose")];
+//    [panel setPrompt: @"こねこ"];
+    
 	[panel setCanChooseDirectories:YES];
 	[panel setCanChooseFiles:NO];
 	[panel setAllowsMultipleSelection:NO];
