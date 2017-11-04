@@ -1364,7 +1364,7 @@
         //make first pid array
         NSArray *firstPIDlist = [self makePIDArray:@"WineskinX11"];
         //Start WineskinX11
-        wrapperBundlePID = [self systemCommand:[NSString stringWithFormat:@"export LC_ALL=ja_JP.UTF-8;export WINESKIN_LIB_PATH_FOR_FALLBACK=\"%@\";export DISPLAY=%@;DYLD_FALLBACK_LIBRARY_PATH=\"%@\" \"%@/MacOS/WineskinX11\" %@ -depth %@ +xinerama -br %@ -xkbdir \"%@/bin/X11/xkb\"%@ > \"/dev/null\" 2>&1 & echo \"$!\"",dyldFallBackLibraryPath,theDisplayNumber,dyldFallBackLibraryPath,contentsFold,theDisplayNumber,fullScreenResolutionBitDepth,wineskinX11FontPath,frameworksFold,quartzwmLine]];
+        wrapperBundlePID = [self systemCommand:[NSString stringWithFormat:@"export LC_ALL=ja_JP.UTF-8;LANG=ja_JP.UTF-8;export WINESKIN_LIB_PATH_FOR_FALLBACK=\"%@\";export DISPLAY=%@;DYLD_FALLBACK_LIBRARY_PATH=\"%@\" \"%@/MacOS/WineskinX11\" %@ -depth %@ +xinerama -br %@ -xkbdir \"%@/bin/X11/xkb\"%@ > \"/dev/null\" 2>&1 & echo \"$!\"",dyldFallBackLibraryPath,theDisplayNumber,dyldFallBackLibraryPath,contentsFold,theDisplayNumber,fullScreenResolutionBitDepth,wineskinX11FontPath,frameworksFold,quartzwmLine]];
         // get PID of WineskinX11 just launched
         if ([wineskinX11PID isEqualToString:@"unset"])
         {
@@ -1852,7 +1852,7 @@
         }
         //launch monitor thread for killing stuck wineboots (work-a-round Macdriver bug for 1.5.28)
         [NSThread detachNewThreadSelector:@selector(wineBootStuckProcess) toTarget:self withObject:nil];
-        [self systemCommand:[NSString stringWithFormat:@"export LC_ALL=ja_JP.UTF-8;%@export WINESKIN_LIB_PATH_FOR_FALLBACK=\"%@\";export WINEDEBUG=%@;export PATH=\"%@/wswine.bundle/bin:%@/bin:$PATH:/opt/local/bin:/opt/local/sbin\";export DISPLAY=%@;export WINEPREFIX=\"%@\";DYLD_FALLBACK_LIBRARY_PATH=\"%@\" wine wineboot 2>&1",mshtmlLine,dyldFallBackLibraryPath,wineDebugLine,frameworksFold,frameworksFold,theDisplayNumber,winePrefix,dyldFallBackLibraryPath]];
+        [self systemCommand:[NSString stringWithFormat:@"export LC_ALL=ja_JP.UTF-8;LANG=ja_JP.UTF-8;%@export WINESKIN_LIB_PATH_FOR_FALLBACK=\"%@\";export WINEDEBUG=%@;export PATH=\"%@/wswine.bundle/bin:%@/bin:$PATH:/opt/local/bin:/opt/local/sbin\";export DISPLAY=%@;export WINEPREFIX=\"%@\";DYLD_FALLBACK_LIBRARY_PATH=\"%@\" wine wineboot 2>&1",mshtmlLine,dyldFallBackLibraryPath,wineDebugLine,frameworksFold,frameworksFold,theDisplayNumber,winePrefix,dyldFallBackLibraryPath]];
         usleep(3000000);
         if ([wssCommand isEqualToString:@"WSS-wineprefixcreate"]) //only runs on build new wrapper, and rebuild
         {
@@ -1880,7 +1880,7 @@
                 [self systemCommand:[NSString stringWithFormat:@"chmod -h 777 \"%@/drive_c/users/%@\"",winePrefix,NSUserName()]];
             }
             //load Wineskin default reg entries
-            [self systemCommand:[NSString stringWithFormat:@"export LC_ALL=ja_JP.UTF-8;export WINESKIN_LIB_PATH_FOR_FALLBACK=\"%@\";export WINEDEBUG=%@;export PATH=\"%@/wswine.bundle/bin:%@/bin:$PATH:/opt/local/bin:/opt/local/sbin\";export DISPLAY=%@;export WINEPREFIX=\"%@\";DYLD_FALLBACK_LIBRARY_PATH=\"%@\" wine regedit \"%@/../Wineskin.app/Contents/Resources/remakedefaults.reg\" > \"/dev/null\" 2>&1",dyldFallBackLibraryPath,wineDebugLine,frameworksFold,frameworksFold,theDisplayNumber,winePrefix,dyldFallBackLibraryPath,contentsFold]];
+            [self systemCommand:[NSString stringWithFormat:@"export LC_ALL=ja_JP.UTF-8;LANG=ja_JP.UTF-8;export WINESKIN_LIB_PATH_FOR_FALLBACK=\"%@\";export WINEDEBUG=%@;export PATH=\"%@/wswine.bundle/bin:%@/bin:$PATH:/opt/local/bin:/opt/local/sbin\";export DISPLAY=%@;export WINEPREFIX=\"%@\";DYLD_FALLBACK_LIBRARY_PATH=\"%@\" wine regedit \"%@/../Wineskin.app/Contents/Resources/remakedefaults.reg\" > \"/dev/null\" 2>&1",dyldFallBackLibraryPath,wineDebugLine,frameworksFold,frameworksFold,theDisplayNumber,winePrefix,dyldFallBackLibraryPath,contentsFold]];
             usleep(5000000);
         }
         //fix user name entires over to Wineskin
@@ -1982,11 +1982,11 @@
                 || ([winetricksCommands count] == 1 && ([[winetricksCommands objectAtIndex:0] isEqualToString:@"list"] || [[winetricksCommands objectAtIndex:0] hasPrefix:@"list-"])))
             {
                 //just getting a list of packages... X should NOT be running.
-                [self systemCommand:[NSString stringWithFormat:@"export LC_ALL=ja_JP.UTF-8;export WINESKIN_LIB_PATH_FOR_FALLBACK=\"%@\";export WINEDEBUG=%@;cd \"%@/../Wineskin.app/Contents/Resources\";export PATH=\"$PWD:%@/wswine.bundle/bin:%@/bin:$PATH:/opt/local/bin:/opt/local/sbin\";export DISPLAY=%@;export WINEPREFIX=\"%@\";DYLD_FALLBACK_LIBRARY_PATH=\"%@\" winetricks --no-isolate %@ > \"%@/Logs/WinetricksTemp.log\"",dyldFallBackLibraryPath,wineDebugLine,contentsFold,frameworksFold,frameworksFold,theDisplayNumber,winePrefix,dyldFallBackLibraryPath,[winetricksCommands componentsJoinedByString:@" "],winePrefix]];
+                [self systemCommand:[NSString stringWithFormat:@"export LC_ALL=ja_JP.UTF-8;LANG=ja_JP.UTF-8;export WINESKIN_LIB_PATH_FOR_FALLBACK=\"%@\";export WINEDEBUG=%@;cd \"%@/../Wineskin.app/Contents/Resources\";export PATH=\"$PWD:%@/wswine.bundle/bin:%@/bin:$PATH:/opt/local/bin:/opt/local/sbin\";export DISPLAY=%@;export WINEPREFIX=\"%@\";DYLD_FALLBACK_LIBRARY_PATH=\"%@\" winetricks --no-isolate %@ > \"%@/Logs/WinetricksTemp.log\"",dyldFallBackLibraryPath,wineDebugLine,contentsFold,frameworksFold,frameworksFold,theDisplayNumber,winePrefix,dyldFallBackLibraryPath,[winetricksCommands componentsJoinedByString:@" "],winePrefix]];
             }
             else
             {
-                [self systemCommand:[NSString stringWithFormat:@"export LC_ALL=ja_JP.UTF-8;export WINESKIN_LIB_PATH_FOR_FALLBACK=\"%@\";export WINEDEBUG=%@;cd \"%@/../Wineskin.app/Contents/Resources\";export PATH=\"$PWD:%@/wswine.bundle/bin:%@/bin:$PATH:/opt/local/bin:/opt/local/sbin\";export DISPLAY=%@;export WINEPREFIX=\"%@\";%@DYLD_FALLBACK_LIBRARY_PATH=\"%@\" winetricks --no-isolate \"%@\" > \"%@/Logs/Winetricks.log\" 2>&1",dyldFallBackLibraryPath,wineDebugLine,contentsFold,frameworksFold,frameworksFold,theDisplayNumber,winePrefix,[wineStartInfo getCliCustomCommands],dyldFallBackLibraryPath,[winetricksCommands componentsJoinedByString:@"\" \""],winePrefix]];
+                [self systemCommand:[NSString stringWithFormat:@"export LC_ALL=ja_JP.UTF-8;LANG=ja_JP.UTF-8;export WINESKIN_LIB_PATH_FOR_FALLBACK=\"%@\";export WINEDEBUG=%@;cd \"%@/../Wineskin.app/Contents/Resources\";export PATH=\"$PWD:%@/wswine.bundle/bin:%@/bin:$PATH:/opt/local/bin:/opt/local/sbin\";export DISPLAY=%@;export WINEPREFIX=\"%@\";%@DYLD_FALLBACK_LIBRARY_PATH=\"%@\" winetricks --no-isolate \"%@\" > \"%@/Logs/Winetricks.log\" 2>&1",dyldFallBackLibraryPath,wineDebugLine,contentsFold,frameworksFold,frameworksFold,theDisplayNumber,winePrefix,[wineStartInfo getCliCustomCommands],dyldFallBackLibraryPath,[winetricksCommands componentsJoinedByString:@"\" \""],winePrefix]];
             }
             usleep(5000000); // sometimes it dumps out slightly too fast... just hold for a few seconds
         }
@@ -2011,13 +2011,13 @@
                     {
                         break;
                     }
-                    [self systemCommand:[NSString stringWithFormat:@"export LC_ALL=ja_JP.UTF-8;export WINESKIN_LIB_PATH_FOR_FALLBACK=\"%@\";export PATH=\"%@/wswine.bundle/bin:%@/bin:$PATH:/opt/local/bin:/opt/local/sbin\";%@export WINEDEBUG=%@;export DISPLAY=%@;export WINEPREFIX=\"%@\";%@cd \"%@/wswine.bundle/bin\";DYLD_FALLBACK_LIBRARY_PATH=\"%@\" wine start /unix \"%@\" > \"%@\" 2>&1 &",dyldFallBackLibraryPath,frameworksFold,frameworksFold,[wineStartInfo getULimitNumber],wineDebugLine,theDisplayNumber,winePrefix,[wineStartInfo getCliCustomCommands],frameworksFold,dyldFallBackLibraryPath,item,wineLogFileLocal]];
+                    [self systemCommand:[NSString stringWithFormat:@"export LC_ALL=ja_JP.UTF-8;LANG=ja_JP.UTF-8;export WINESKIN_LIB_PATH_FOR_FALLBACK=\"%@\";export PATH=\"%@/wswine.bundle/bin:%@/bin:$PATH:/opt/local/bin:/opt/local/sbin\";%@export WINEDEBUG=%@;export DISPLAY=%@;export WINEPREFIX=\"%@\";%@cd \"%@/wswine.bundle/bin\";DYLD_FALLBACK_LIBRARY_PATH=\"%@\" wine start /unix \"%@\" > \"%@\" 2>&1 &",dyldFallBackLibraryPath,frameworksFold,frameworksFold,[wineStartInfo getULimitNumber],wineDebugLine,theDisplayNumber,winePrefix,[wineStartInfo getCliCustomCommands],frameworksFold,dyldFallBackLibraryPath,item,wineLogFileLocal]];
                 }
             }
             else
             {
                 //launch Wine normally
-                [self systemCommand:[NSString stringWithFormat:@"export LC_ALL=ja_JP.UTF-8;export WINESKIN_LIB_PATH_FOR_FALLBACK=\"%@\";export PATH=\"%@/wswine.bundle/bin:%@/bin:$PATH:/opt/local/bin:/opt/local/sbin\";%@export WINEDEBUG=%@;export DISPLAY=%@;export WINEPREFIX=\"%@\";%@cd \"%@\";DYLD_FALLBACK_LIBRARY_PATH=\"%@\" wine%@ \"%@\"%@ > \"%@\" 2>&1 &",dyldFallBackLibraryPath,frameworksFold,frameworksFold,[wineStartInfo getULimitNumber],wineDebugLine,theDisplayNumber,winePrefix,[wineStartInfo getCliCustomCommands],[wineStartInfo getWineRunLocation],dyldFallBackLibraryPath,startExeLine,[wineStartInfo getWineRunFile],[wineStartInfo getProgramFlags],wineLogFileLocal]];
+                [self systemCommand:[NSString stringWithFormat:@"export LC_ALL=ja_JP.UTF-8;LANG=ja_JP.UTF-8;export WINESKIN_LIB_PATH_FOR_FALLBACK=\"%@\";export PATH=\"%@/wswine.bundle/bin:%@/bin:$PATH:/opt/local/bin:/opt/local/sbin\";%@export WINEDEBUG=%@;export DISPLAY=%@;export WINEPREFIX=\"%@\";%@cd \"%@\";DYLD_FALLBACK_LIBRARY_PATH=\"%@\" wine%@ \"%@\"%@ > \"%@\" 2>&1 &",dyldFallBackLibraryPath,frameworksFold,frameworksFold,[wineStartInfo getULimitNumber],wineDebugLine,theDisplayNumber,winePrefix,[wineStartInfo getCliCustomCommands],[wineStartInfo getWineRunLocation],dyldFallBackLibraryPath,startExeLine,[wineStartInfo getWineRunFile],[wineStartInfo getProgramFlags],wineLogFileLocal]];
             }
             NSMutableString *vdResolution = [[[NSMutableString alloc] initWithString:[wineStartInfo getVdResolution]] autorelease];
             [vdResolution replaceOccurrencesOfString:@"x" withString:@" " options:NSLiteralSearch range:NSMakeRange(0, [vdResolution length])];
@@ -2065,7 +2065,7 @@
         {
 			if (![self isPID:wrapperBundlePID named:@"WineskinX11"])
             {
-				[self systemCommand:[NSString stringWithFormat:@"export LC_ALL=ja_JP.UTF-8;export WINESKIN_LIB_PATH_FOR_FALLBACK=\"%@\";export PATH=\"%@/wswine.bundle/bin:%@/bin:$PATH:/opt/local/bin:/opt/local/sbin\";export DISPLAY=%@;export WINEPREFIX=\"%@\";cd \"%@/wswine.bundle/bin\";DYLD_FALLBACK_LIBRARY_PATH=\"%@\" wineserver -k > /dev/null 2>&1",dyldFallBackLibraryPath,frameworksFold,frameworksFold,theDisplayNumber,winePrefix,frameworksFold,dyldFallBackLibraryPath]];
+				[self systemCommand:[NSString stringWithFormat:@"export LC_ALL=ja_JP.UTF-8;LANG=ja_JP.UTF-8;export WINESKIN_LIB_PATH_FOR_FALLBACK=\"%@\";export PATH=\"%@/wswine.bundle/bin:%@/bin:$PATH:/opt/local/bin:/opt/local/sbin\";export DISPLAY=%@;export WINEPREFIX=\"%@\";cd \"%@/wswine.bundle/bin\";DYLD_FALLBACK_LIBRARY_PATH=\"%@\" wineserver -k > /dev/null 2>&1",dyldFallBackLibraryPath,frameworksFold,frameworksFold,theDisplayNumber,winePrefix,frameworksFold,dyldFallBackLibraryPath]];
             }
         }
 		//if running in override fullscreen, need to handle resolution changes

@@ -157,6 +157,10 @@ static NSInteger localizedComparator(id a, id b, void* context)
 #ifdef WINESKINE_JAPANESE
     [self getCurrentWrapperVersion];
     if (_isNoMasterWrapperInstalled) {
+        //remove old one
+        [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/Library/Application Support/Wineskin/Wrapper-JP",NSHomeDirectory()] error:nil];
+        [filemgr createDirectoryAtPath:[NSHomeDirectory() stringByAppendingString:@"/Library/Application Support/Wineskin/Wrapper-JP"] withIntermediateDirectories:YES attributes:nil error:nil];
+
         //install default wrapper! (to "/Library/Application Support/Wineskin/Wrapper-JP")
         const NSString* defualtWrapperJpName = @"Wineskin-2.6.2-JP00"; //Default Wrapper for JP
         
@@ -164,8 +168,6 @@ static NSInteger localizedComparator(id a, id b, void* context)
         system([[NSString stringWithFormat:@"\"%@/Library/Application Support/Wineskin/7za\" x \"%@/%@.app.tar.7z\" -o/tmp", NSHomeDirectory(),[applicationPath stringByAppendingString:@"/Contents/Resources"],defualtWrapperJpName] UTF8String]);
         system([[NSString stringWithFormat:@"/usr/bin/tar -C /tmp -xf /tmp/%@.app.tar",defualtWrapperJpName] UTF8String]);
         
-        //remove old one
-        [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/Library/Application Support/Wineskin/Wrapper-JP",NSHomeDirectory()] error:nil];
         //move wrapper "/tmp" to "Application Support"
         [[NSFileManager defaultManager] moveItemAtPath:[NSString stringWithFormat:@"/tmp/%@.app",defualtWrapperJpName] toPath:[NSString stringWithFormat:@"%@/Library/Application Support/Wineskin/Wrapper-JP/%@.app",NSHomeDirectory(),defualtWrapperJpName] error:nil];
     }
@@ -174,7 +176,7 @@ static NSInteger localizedComparator(id a, id b, void* context)
 - (void)checkForUpdates
 {
 #ifdef WINESKINE_JAPANESE
-    // Japanse Version not support Wineskin.app update yet....
+    // Japanse Version not support WineskinWinery.app update yet....
     [window makeKeyAndOrderFront:self];
     [busyWindow orderOut:self];
     return;
